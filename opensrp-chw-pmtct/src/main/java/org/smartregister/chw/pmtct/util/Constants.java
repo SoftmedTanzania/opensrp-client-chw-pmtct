@@ -31,7 +31,7 @@ public interface Constants {
         String BASE_ENTITY_ID = "BASE_ENTITY_ID";
         String FAMILY_BASE_ENTITY_ID = "FAMILY_BASE_ENTITY_ID";
         String ACTION = "ACTION";
-        String MALARIA_FORM_NAME = "MALARIA_FORM_NAME";
+        String PMTCT_FORM_NAME = "PMTCT_FORM_NAME";
 
     }
 
