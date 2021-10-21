@@ -13,8 +13,7 @@ public interface Constants {
     }
 
     interface EVENT_TYPE {
-        String MALARIA_CONFIRMATION = "Malaria Confirmation";
-        String MALARIA_FOLLOW_UP_VISIT = "Malaria Follow-up Visit";
+        String PMTCT_REGISTRATION = "PMTCT Registration";
     }
 
     interface FORMS {
@@ -23,6 +22,7 @@ public interface Constants {
     }
 
     interface TABLES {
+        String PMTCT_REGISTRATION = "ec_pmtct_registration";
         String MALARIA_CONFIRMATION = "ec_malaria_confirmation";
         String MALARIA_FOLLOW_UP = "ec_malaria_follow_up_visit";
     }

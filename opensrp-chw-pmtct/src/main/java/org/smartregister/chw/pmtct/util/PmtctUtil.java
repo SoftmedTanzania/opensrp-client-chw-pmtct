@@ -45,7 +45,7 @@ public class PmtctUtil {
     public static void processEvent(AllSharedPreferences allSharedPreferences, Event baseEvent) throws Exception {
         if (baseEvent != null) {
             PmtctJsonFormUtils.tagEvent(allSharedPreferences, baseEvent);
-            JSONObject eventJson = new JSONObject(JsonFormUtils.gson.toJson(baseEvent));
+            JSONObject eventJson = new JSONObject(org.smartregister.util.JsonFormUtils.gson.toJson(baseEvent));
 
             getSyncHelper().addEvent(baseEvent.getBaseEntityId(), eventJson, BaseRepository.TYPE_Unprocessed);
             startClientProcessing();

@@ -167,7 +167,7 @@ public class BasePmtctRegisterActivity extends BaseRegisterActivity implements P
                 JSONObject form = new JSONObject(jsonString);
                 JSONArray fieldsOne = PmtctJsonFormUtils.fields(form, Constants.STEP_ONE);
                 updateFormField(fieldsOne, DBConstants.KEY.RELATIONAL_ID, FAMILY_BASE_ENTITY_ID);
-//                process malaria form
+//                process pmtct form
                 presenter().saveForm(form.toString());
             } catch (JSONException e) {
                 Timber.e(e);
