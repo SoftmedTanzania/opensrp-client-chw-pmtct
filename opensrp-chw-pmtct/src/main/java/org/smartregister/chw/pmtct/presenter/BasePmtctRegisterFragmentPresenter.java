@@ -39,7 +39,7 @@ public class BasePmtctRegisterFragmentPresenter implements PmtctRegisterFragment
 
     @Override
     public String getDefaultSortQuery() {
-        return Constants.TABLES.MALARIA_CONFIRMATION + "." + DBConstants.KEY.LAST_INTERACTED_WITH + " DESC ";
+        return "";
     }
 
     @Override
@@ -61,7 +61,7 @@ public class BasePmtctRegisterFragmentPresenter implements PmtctRegisterFragment
 
     @Override
     public void initializeQueries(String mainCondition) {
-        String tableName = Constants.TABLES.MALARIA_CONFIRMATION;
+        String tableName = Constants.TABLES.PMTCT_REGISTRATION;
         mainCondition = trim(getMainCondition()).equals("") ? mainCondition : getMainCondition();
         String countSelect = model.countSelect(tableName, mainCondition);
         String mainSelect = model.mainSelect(tableName, mainCondition);
@@ -97,7 +97,7 @@ public class BasePmtctRegisterFragmentPresenter implements PmtctRegisterFragment
 
     @Override
     public String getMainTable() {
-        return Constants.TABLES.MALARIA_CONFIRMATION;
+        return Constants.TABLES.PMTCT_REGISTRATION;
     }
 
     @Override

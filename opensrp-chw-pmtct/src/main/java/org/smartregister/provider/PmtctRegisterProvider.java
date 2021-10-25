@@ -1,5 +1,6 @@
 package org.smartregister.provider;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.database.Cursor;
 import android.support.v7.widget.RecyclerView;
@@ -69,6 +70,7 @@ public class PmtctRegisterProvider implements RecyclerViewProvider<PmtctRegister
         }
     }
 
+    @SuppressLint("SetTextI18n")
     private void populatePatientColumn(CommonPersonObjectClient pc, final RegisterViewHolder viewHolder) {
         try {
 
