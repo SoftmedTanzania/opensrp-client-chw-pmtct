@@ -16,16 +16,16 @@ public class MemberObject implements Serializable {
     private String age;
     private String relationalid;
     private String details;
-    private String dateChwMalariaTest;
+   // private String dateChwMalariaTest;
     private String feverMalariaChw;
     private String feverDuration;
     private String dateHfMalariaTest;
-    private Date malariaTestDate;
-    private String malariaTreat;
+//    private Date malariaTestDate;
+//    private String malariaTreat;
     private String famLlin;
     private String llin2Days;
     private String llinCondition;
-    private String malariaEduChw;
+   // private String malariaEduChw;
     private String baseEntityId;
     private String relationalId;
     private String primaryCareGiver;
@@ -39,7 +39,7 @@ public class MemberObject implements Serializable {
     private String deliveryDate;
     private String ancMember;
     private String pncMember;
-    private String malariaFollowUpDate;
+    //private String malariaFollowUpDate;
 
     public MemberObject() {
     }
@@ -115,13 +115,13 @@ public class MemberObject implements Serializable {
         this.details = details;
     }
 
-    public String getDateChwMalariaTest() {
-        return dateChwMalariaTest;
-    }
-
-    public void setDateChwMalariaTest(String dateChwMalariaTest) {
-        this.dateChwMalariaTest = dateChwMalariaTest;
-    }
+//    public String getDateChwMalariaTest() {
+//        return dateChwMalariaTest;
+//    }
+//
+//    public void setDateChwMalariaTest(String dateChwMalariaTest) {
+//        this.dateChwMalariaTest = dateChwMalariaTest;
+//    }
 
     public String getFeverMalariaChw() {
         return feverMalariaChw;
@@ -147,6 +147,7 @@ public class MemberObject implements Serializable {
         this.dateHfMalariaTest = dateHfMalariaTest;
     }
 
+    /*
     public Date getMalariaTestDate() {
         return malariaTestDate;
     }
@@ -161,7 +162,7 @@ public class MemberObject implements Serializable {
 
     public void setMalariaTreat(String malariaTreat) {
         this.malariaTreat = malariaTreat;
-    }
+    }*/
 
     public String getFamLlin() {
         return famLlin;
@@ -186,7 +187,7 @@ public class MemberObject implements Serializable {
     public void setLlinCondition(String llinCondition) {
         this.llinCondition = llinCondition;
     }
-
+    /*
     public String getMalariaEduChw() {
         return malariaEduChw;
     }
@@ -194,7 +195,7 @@ public class MemberObject implements Serializable {
     public void setMalariaEduChw(String malariaEduChw) {
         this.malariaEduChw = malariaEduChw;
     }
-
+    */
     public String getBaseEntityId() {
         return baseEntityId;
     }
@@ -315,12 +316,12 @@ public class MemberObject implements Serializable {
     public void setPncMember(String pncMember) {
         this.pncMember = pncMember;
     }
-
+    /*
     public String getMalariaFollowUpDate() {
         return malariaFollowUpDate;
     }
 
     public void setMalariaFollowUpDate(String malariaFollowUpDate) {
         this.malariaFollowUpDate = malariaFollowUpDate;
-    }
+    }*/
 }

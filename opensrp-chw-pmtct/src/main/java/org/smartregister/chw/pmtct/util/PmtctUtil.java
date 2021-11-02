@@ -136,7 +136,7 @@ public class PmtctUtil {
 
         @Override
         protected Void doInBackground(Void... voids) {
-            PmtctDao.closeMalariaMemberFromRegister(baseEntityId);
+           // PmtctDao.closeMalariaMemberFromRegister(baseEntityId);
             return null;
         }
 

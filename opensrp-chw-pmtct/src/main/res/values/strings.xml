@@ -12,8 +12,8 @@
     <string name="saving_dialog_title">Saving</string>
     <string name="interpunct" translatable="false">\u00b7</string>
     <string name="malaria_followup_visit">FOLLOWUP\nVISIT</string>
-    <string name="record_malaria">Record malaria follow-up</string>
-    <string name="return_to_previous_page">Return all Malaria Clients</string>
+    <string name="record_malaria">Record Pmtct follow-up</string>
+    <string name="return_to_previous_page">Return all Pmtct Clients</string>
     <string name="last_visit_40_days_ago">Last visit %1$s ago</string>
     <string name="view_medical_history">View medical history</string>
     <string name="call_no_number_provided">(no number provided)</string>
@@ -52,6 +52,6 @@
     <string name="female">Female</string>
     <string name="pmtct">PMTCT</string>
     <string name="register_pmtct">Register Pmtct</string>
-    <string name="loading_test">Loading...</string>
+    <string name="record_pmtct">Record PMTCT Followup</string>
 
 </resources>

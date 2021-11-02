@@ -84,7 +84,7 @@ public class BasePmtctProfileActivity extends BaseProfileActivity implements Pmt
 
     @Override
     protected void onCreation() {
-        setContentView(R.layout.activity_malaria_profile);
+        setContentView(R.layout.activity_pmtct_profile);
         Toolbar toolbar = findViewById(R.id.collapsing_toolbar);
         setSupportActionBar(toolbar);
         String baseEntityId = getIntent().getStringExtra(Constants.ACTIVITY_PAYLOAD.BASE_ENTITY_ID);
@@ -219,9 +219,9 @@ public class BasePmtctProfileActivity extends BaseProfileActivity implements Pmt
         if (StringUtils.isNotBlank(memberObject.getPrimaryCareGiver()) && memberObject.getPrimaryCareGiver().equals(memberObject.getBaseEntityId())) {
             findViewById(R.id.primary_malaria_caregiver).setVisibility(View.VISIBLE);
         }
-        if (memberObject.getMalariaTestDate() != null) {
-            textview_positive_date.setText(getString(R.string.malaria_positive) + " " + formatTime(memberObject.getMalariaTestDate()));
-        }
+//        if (memberObject.getMalariaTestDate() != null) {
+//            textview_positive_date.setText(getString(R.string.malaria_positive) + " " + formatTime(memberObject.getMalariaTestDate()));
+//        }
     }
 
     @Override
