@@ -37,19 +37,20 @@ public class PmtctDao extends AbstractDao {
 //        updateDB(sql);
 //    }
 
-//    public static boolean isRegisteredForMalaria(String baseEntityID) {
-//        String sql = "SELECT count(p.base_entity_id) count FROM ec_malaria_confirmation p " +
-//                "WHERE p.base_entity_id = '" + baseEntityID + "' AND p.is_closed = 0 AND p.malaria  = 1 " +
-//                "AND datetime('NOW') <= datetime(p.last_interacted_with/1000, 'unixepoch', 'localtime','+15 days')";
-//
-//        DataMap<Integer> dataMap = cursor -> getCursorIntValue(cursor, "count");
-//
-//        List<Integer> res = readData(sql, dataMap);
-//        if (res == null || res.size() != 1)
-//            return false;
-//
-//        return res.get(0) > 0;
-//    }
+    public static boolean isRegisteredForPmtct(String baseEntityID) {
+        //
+        //"AND datetime('NOW') <= datetime(p.last_interacted_with/1000, 'unixepoch', 'localtime','+15 days')"
+        String sql = "SELECT count(p.base_entity_id) count FROM ec_pmtct_registration p " +
+                "WHERE p.base_entity_id = '" + baseEntityID + "'";
+
+        DataMap<Integer> dataMap = cursor -> getCursorIntValue(cursor, "count");
+
+        List<Integer> res = readData(sql, dataMap);
+        if (res == null || res.size() != 1)
+            return false;
+
+        return res.get(0) > 0;
+    }
 
 //    public static Integer getMalariaFamilyMembersCount(String familyBaseEntityId) {
 //        String sql = "SELECT count(emc.base_entity_id) count FROM ec_malaria_confirmation emc " +

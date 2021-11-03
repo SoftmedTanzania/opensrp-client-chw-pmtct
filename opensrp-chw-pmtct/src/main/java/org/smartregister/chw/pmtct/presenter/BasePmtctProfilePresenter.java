@@ -35,15 +35,13 @@ public class BasePmtctProfilePresenter implements PmtctProfileContract.Presenter
         if (getView() == null) {
             return;
         }
-
-        getView().hideView();
-//        if (("OVERDUE").equals(visitState) || ("DUE").equals(visitState)) {
-//            if (("OVERDUE").equals(visitState)) {
-//                getView().setOverDueColor();
-//            }
-//        } else {
-//            getView().hideView();
-//        }
+        if (("OVERDUE").equals(visitState) || ("DUE").equals(visitState)) {
+            if (("OVERDUE").equals(visitState)) {
+                getView().setOverDueColor();
+            }
+        } else {
+            getView().hideView();
+        }
     }
 
     @Override
