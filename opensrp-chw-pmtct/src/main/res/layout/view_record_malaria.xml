@@ -137,7 +137,7 @@
 
 
         <org.smartregister.view.customcontrols.CustomFontTextView
-            android:id="@+id/textview_record_malaria"
+            android:id="@+id/textview_record_pmtct"
             style="@style/CustomFontTextViewStyle.ListView.Normal.MultipleLines"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

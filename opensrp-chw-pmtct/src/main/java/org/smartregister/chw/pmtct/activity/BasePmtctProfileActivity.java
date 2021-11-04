@@ -50,7 +50,7 @@ public class BasePmtctProfileActivity extends BaseProfileActivity implements Pmt
     protected TextView textViewGender;
     protected TextView textViewLocation;
     protected TextView textViewUniqueID;
-    protected TextView textViewRecordMalaria;
+    protected TextView textViewRecordPmtct;
     protected TextView textViewRecordAnc;
     protected TextView textview_positive_date;
     protected View view_last_visit_row;
@@ -126,7 +126,7 @@ public class BasePmtctProfileActivity extends BaseProfileActivity implements Pmt
         progressBar = findViewById(R.id.progress_bar);
         textViewRecordAncNotDone = findViewById(R.id.textview_record_anc_not_done);
         textViewVisitDoneEdit = findViewById(R.id.textview_edit);
-        textViewRecordMalaria = findViewById(R.id.textview_record_malaria);
+        textViewRecordPmtct = findViewById(R.id.textview_record_pmtct);
         textViewRecordAnc = findViewById(R.id.textview_record_anc);
         textViewUndo = findViewById(R.id.textview_undo);
         imageView = findViewById(R.id.imageview_profile);
@@ -137,7 +137,7 @@ public class BasePmtctProfileActivity extends BaseProfileActivity implements Pmt
         rlUpcomingServices.setOnClickListener(this);
         rlFamilyServicesDue.setOnClickListener(this);
         rlMalariaPositiveDate.setOnClickListener(this);
-        textViewRecordMalaria.setOnClickListener(this);
+        textViewRecordPmtct.setOnClickListener(this);
         textViewRecordAnc.setOnClickListener(this);
         textViewUndo.setOnClickListener(this);
 
@@ -200,7 +200,7 @@ public class BasePmtctProfileActivity extends BaseProfileActivity implements Pmt
 
     @Override
     public void hideView() {
-        textViewRecordMalaria.setVisibility(View.GONE);
+        textViewRecordPmtct.setVisibility(View.GONE);
     }
 
     @SuppressLint("DefaultLocale")
@@ -226,7 +226,7 @@ public class BasePmtctProfileActivity extends BaseProfileActivity implements Pmt
 
     @Override
     public void setOverDueColor() {
-        textViewRecordMalaria.setBackground(getResources().getDrawable(R.drawable.record_btn_selector_overdue));
+        textViewRecordPmtct.setBackground(getResources().getDrawable(R.drawable.record_btn_selector_overdue));
     }
 
     @Override
