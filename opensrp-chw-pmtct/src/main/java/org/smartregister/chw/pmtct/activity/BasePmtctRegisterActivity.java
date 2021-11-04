@@ -34,6 +34,7 @@ import org.smartregister.view.activity.BaseRegisterActivity;
 import org.smartregister.view.fragment.BaseRegisterFragment;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 
@@ -109,7 +110,7 @@ public class BasePmtctRegisterActivity extends BaseRegisterActivity implements P
 
     @Override
     public List<String> getViewIdentifiers() {
-        return Arrays.asList(Constants.CONFIGURATION.MALARIA_CONFIRMATION);
+        return Collections.singletonList(Constants.CONFIGURATION.PMTCT_REGISTRATION);
     }
 
     /**

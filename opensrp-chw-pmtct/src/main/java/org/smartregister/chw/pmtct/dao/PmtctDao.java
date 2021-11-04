@@ -10,28 +10,28 @@ import java.util.Locale;
 
 public class PmtctDao extends AbstractDao {
 
-//    public static Date getMalariaTestDate(String baseEntityID) {
-//        String sql = "select malaria_test_date from ec_malaria_confirmation where base_entity_id = '" + baseEntityID + "'";
-//
-//        DataMap<Date> dataMap = cursor -> getCursorValueAsDate(cursor, "malaria_test_date", getNativeFormsDateFormat());
-//
-//        List<Date> res = readData(sql, dataMap);
-//        if (res == null || res.size() != 1)
-//            return null;
-//
-//        return res.get(0);
-//    }
-//    public static Date getMalariaFollowUpVisitDate(String baseEntityID) {
-//        String sql = "SELECT eventDate FROM event where eventType ='Malaria Follow-up Visit' AND baseEntityId ='" + baseEntityID + "'";
-//
-//        DataMap<Date> dataMap = cursor -> getCursorValueAsDate(cursor, "eventDate", getNativeFormsDateFormat());
-//
-//        List<Date> res = readData(sql, dataMap);
-//        if (res == null || res.size() != 1)
-//            return null;
-//
-//        return res.get(0);
-//    }
+    public static Date getPmtctRegisterDate(String baseEntityID) {
+        String sql = "select pmtct_register_date from ec_pmtct_registration where base_entity_id = '" + baseEntityID + "'";
+
+        DataMap<Date> dataMap = cursor -> getCursorValueAsDate(cursor, "pmtct_register_date", getNativeFormsDateFormat());
+
+        List<Date> res = readData(sql, dataMap);
+        if (res == null || res.size() != 1)
+            return null;
+
+        return res.get(0);
+    }
+    public static Date getPmtctFollowUpVisitDate(String baseEntityID) {
+        String sql = "SELECT eventDate FROM event where eventType ='PMTCT Follow-up Visit' AND baseEntityId ='" + baseEntityID + "'";
+
+        DataMap<Date> dataMap = cursor -> getCursorValueAsDate(cursor, "eventDate", getNativeFormsDateFormat());
+
+        List<Date> res = readData(sql, dataMap);
+        if (res == null || res.size() != 1)
+            return null;
+
+        return res.get(0);
+    }
 //    public static void closeMalariaMemberFromRegister(String baseEntityID) {
 //        String sql = "update ec_malaria_confirmation set is_closed = 1 where base_entity_id = '" + baseEntityID + "'";
 //        updateDB(sql);

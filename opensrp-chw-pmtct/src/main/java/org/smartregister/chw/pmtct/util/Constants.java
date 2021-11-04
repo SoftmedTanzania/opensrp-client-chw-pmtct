@@ -42,6 +42,7 @@ public interface Constants {
 
     interface CONFIGURATION {
         String MALARIA_CONFIRMATION = "malaria_confirmation";
+        String PMTCT_REGISTRATION = "pmtct_registration";
     }
 
     interface MALARIA_MEMBER_OBJECT {
