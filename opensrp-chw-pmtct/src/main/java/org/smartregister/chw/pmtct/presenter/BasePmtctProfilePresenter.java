@@ -31,7 +31,7 @@ public class BasePmtctProfilePresenter implements PmtctProfileContract.Presenter
     }
 
     @Override
-    public void recordMalariaButton(@Nullable String visitState) {
+    public void recordPmtctButton(@Nullable String visitState) {
         if (getView() == null) {
             return;
         }

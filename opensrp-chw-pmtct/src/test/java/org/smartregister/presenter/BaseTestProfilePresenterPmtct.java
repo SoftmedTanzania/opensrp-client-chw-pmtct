@@ -38,19 +38,19 @@ public class BaseTestProfilePresenterPmtct {
 
     @Test
     public void malariaTestDatePeriodIsLessThanSeven() {
-        profilePresenter.recordMalariaButton("");
+        profilePresenter.recordPmtctButton("");
         verify(view).hideView();
     }
 
     @Test
     public void malariaTestDatePeriodGreaterThanTen() {
-        profilePresenter.recordMalariaButton("OVERDUE");
+        profilePresenter.recordPmtctButton("OVERDUE");
         verify(view).setOverDueColor();
     }
 
     @Test
     public void malariaTestDatePeriodIsMoreThanFourteen() {
-        profilePresenter.recordMalariaButton("EXPIRED");
+        profilePresenter.recordPmtctButton("EXPIRED");
         verify(view).hideView();
     }
 

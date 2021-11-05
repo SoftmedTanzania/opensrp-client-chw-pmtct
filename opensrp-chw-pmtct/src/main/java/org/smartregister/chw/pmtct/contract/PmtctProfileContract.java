@@ -39,7 +39,7 @@ public interface PmtctProfileContract {
 
         void refreshProfileBottom();
 
-        void recordMalariaButton(String visitState);
+        void recordPmtctButton(String visitState);
     }
 
     interface Interactor {

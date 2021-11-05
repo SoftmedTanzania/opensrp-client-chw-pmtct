@@ -14,6 +14,7 @@ public interface Constants {
 
     interface EVENT_TYPE {
         String PMTCT_REGISTRATION = "PMTCT Registration";
+        String PMTCT_FOLLOWUP = "PMTCT Follow-up Visit";
     }
 
     interface FORMS {
@@ -23,6 +24,7 @@ public interface Constants {
 
     interface TABLES {
         String PMTCT_REGISTRATION = "ec_pmtct_registration";
+        String PMTCT_FOLLOW_UP = "ec_pmtct_followup";
         String MALARIA_CONFIRMATION = "ec_malaria_confirmation";
         String MALARIA_FOLLOW_UP = "ec_malaria_follow_up_visit";
     }

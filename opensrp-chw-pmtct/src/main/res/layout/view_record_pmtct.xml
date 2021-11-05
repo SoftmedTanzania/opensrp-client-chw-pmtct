@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/record_malaria"
+    android:id="@+id/record_pmtct"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
@@ -8,7 +8,7 @@
     android:paddingTop="10dp">
 
     <LinearLayout
-        android:id="@+id/record_malaria_bar"
+        android:id="@+id/record_pmtct_bar"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
@@ -53,12 +53,13 @@
                 android:visibility="gone" />
 
         </LinearLayout>
+
         <RelativeLayout
             android:id="@+id/record_visit_not_done_bar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/white"
             android:layout_margin="8dp"
+            android:background="@color/white"
             android:visibility="gone">
 
             <ImageView
@@ -150,7 +151,7 @@
             android:paddingTop="10dp"
             android:paddingRight="30dp"
             android:paddingBottom="10dp"
-            android:text="@string/record_malaria"
+            android:text="@string/record_pmtct"
             android:textColor="@color/white" />
 
     </LinearLayout>

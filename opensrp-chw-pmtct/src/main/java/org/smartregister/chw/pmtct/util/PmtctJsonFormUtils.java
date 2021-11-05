@@ -78,6 +78,8 @@ public class PmtctJsonFormUtils extends org.smartregister.util.JsonFormUtils {
 
         if (Constants.EVENT_TYPE.PMTCT_REGISTRATION.equals(encounter_type)) {
             encounter_type = Constants.TABLES.PMTCT_REGISTRATION;
+        }else if(Constants.EVENT_TYPE.PMTCT_FOLLOWUP.equals(encounter_type)){
+            encounter_type = Constants.TABLES.PMTCT_FOLLOW_UP;
         }
         return org.smartregister.util.JsonFormUtils.createEvent(fields, getJSONObject(jsonForm, METADATA), formTag(allSharedPreferences), entityId, getString(jsonForm, ENCOUNTER_TYPE), encounter_type);
     }

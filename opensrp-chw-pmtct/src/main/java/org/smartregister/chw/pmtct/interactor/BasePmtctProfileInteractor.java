@@ -27,7 +27,7 @@ public class BasePmtctProfileInteractor implements PmtctProfileContract.Interact
         Runnable runnable = () -> appExecutors.mainThread().execute(() -> {
             callback.refreshFamilyStatus(AlertStatus.normal);
             callback.refreshMedicalHistory(true);
-            callback.refreshUpComingServicesStatus("Malaria Visit", AlertStatus.normal, new Date());
+            callback.refreshUpComingServicesStatus("Pmtct Registration", AlertStatus.normal, new Date());
         });
         appExecutors.diskIO().execute(runnable);
     }
