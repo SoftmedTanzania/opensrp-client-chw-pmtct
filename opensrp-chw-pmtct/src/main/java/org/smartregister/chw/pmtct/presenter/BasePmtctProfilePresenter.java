@@ -45,6 +45,19 @@ public class BasePmtctProfilePresenter implements PmtctProfileContract.Presenter
     }
 
     @Override
+    public void visitRow(String visitState) {
+        if(getView() == null){
+            return;
+        }
+
+        if(("VISIT_DONE").equalsIgnoreCase(visitState)){
+            getView().showDone();
+        }else{
+            getView().hideDone();
+        }
+    }
+
+    @Override
     @Nullable
     public PmtctProfileContract.View getView() {
         if (view != null && view.get() != null)

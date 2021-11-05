@@ -26,6 +26,10 @@ public interface PmtctProfileContract {
         void recordPnc(MemberObject memberObject);
 
         void hideView();
+
+        void showDone();
+
+       void hideDone();
     }
 
     interface Presenter {
@@ -40,6 +44,8 @@ public interface PmtctProfileContract {
         void refreshProfileBottom();
 
         void recordPmtctButton(String visitState);
+
+        void visitRow(String visitState);
     }
 
     interface Interactor {

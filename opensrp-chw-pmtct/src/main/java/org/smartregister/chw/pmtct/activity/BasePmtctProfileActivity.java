@@ -52,7 +52,7 @@ public class BasePmtctProfileActivity extends BaseProfileActivity implements Pmt
     protected TextView textViewUniqueID;
     protected TextView textViewRecordPmtct;
     protected TextView textViewRecordAnc;
-    protected TextView textview_positive_date;
+   // protected TextView textview_positive_date;
     protected View view_last_visit_row;
     protected View view_most_due_overdue_row;
     protected View view_family_row;
@@ -63,7 +63,7 @@ public class BasePmtctProfileActivity extends BaseProfileActivity implements Pmt
     protected RelativeLayout visitStatus;
     protected ImageView imageViewCross;
     protected TextView textViewUndo;
-    protected RelativeLayout rlMalariaPositiveDate;
+   // protected RelativeLayout rlMalariaPositiveDate;
     private TextView tvUpComingServices;
     private TextView tvFamilyStatus;
     private SimpleDateFormat dateFormat = new SimpleDateFormat("dd MMM", Locale.getDefault());
@@ -114,11 +114,11 @@ public class BasePmtctProfileActivity extends BaseProfileActivity implements Pmt
         imageViewCross = findViewById(R.id.tick_image);
         tvUpComingServices = findViewById(R.id.textview_name_due);
         tvFamilyStatus = findViewById(R.id.textview_family_has);
-        textview_positive_date = findViewById(R.id.textview_positive_date);
+        //textview_positive_date = findViewById(R.id.textview_positive_date);
         rlLastVisit = findViewById(R.id.rlLastVisit);
         rlUpcomingServices = findViewById(R.id.rlUpcomingServices);
         rlFamilyServicesDue = findViewById(R.id.rlFamilyServicesDue);
-        rlMalariaPositiveDate = findViewById(R.id.rlMalariaPositiveDate);
+        //rlMalariaPositiveDate = findViewById(R.id.rlMalariaPositiveDate);
         textViewVisitDone = findViewById(R.id.textview_visit_done);
         visitStatus = findViewById(R.id.record_visit_not_done_bar);
         visitDone = findViewById(R.id.visit_done_bar);
@@ -131,12 +131,15 @@ public class BasePmtctProfileActivity extends BaseProfileActivity implements Pmt
         textViewUndo = findViewById(R.id.textview_undo);
         imageView = findViewById(R.id.imageview_profile);
 
-        textViewRecordAncNotDone.setOnClickListener(this);
+
         textViewVisitDoneEdit.setOnClickListener(this);
+        textViewVisitDoneEdit.setVisibility(View.GONE);
+
+        textViewRecordAncNotDone.setOnClickListener(this);
         rlLastVisit.setOnClickListener(this);
         rlUpcomingServices.setOnClickListener(this);
         rlFamilyServicesDue.setOnClickListener(this);
-        rlMalariaPositiveDate.setOnClickListener(this);
+        //rlMalariaPositiveDate.setOnClickListener(this);
         textViewRecordPmtct.setOnClickListener(this);
         textViewRecordAnc.setOnClickListener(this);
         textViewUndo.setOnClickListener(this);
@@ -203,7 +206,15 @@ public class BasePmtctProfileActivity extends BaseProfileActivity implements Pmt
         textViewRecordPmtct.setVisibility(View.GONE);
     }
 
+    @Override
+    public void showDone() {
+        visitDone.setVisibility(View.VISIBLE);
+    }
 
+    @Override
+    public void hideDone() {
+        visitDone.setVisibility(View.GONE);
+    }
 
     @SuppressLint("DefaultLocale")
     @Override

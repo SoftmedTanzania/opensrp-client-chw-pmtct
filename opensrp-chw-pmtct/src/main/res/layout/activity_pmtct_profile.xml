@@ -191,7 +191,7 @@
                 android:id="@+id/record_visit_pmtct"
                 layout="@layout/view_record_pmtct" />
 
-            <include layout="@layout/content_malaria_profile" />
+            <include layout="@layout/content_pmtct_profile" />
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>
 
