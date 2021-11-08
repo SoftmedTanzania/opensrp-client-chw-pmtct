@@ -52,12 +52,14 @@ public class BasePmtctProfileActivity extends BaseProfileActivity implements Pmt
     protected TextView textViewUniqueID;
     protected TextView textViewRecordPmtct;
     protected TextView textViewRecordAnc;
+    protected TextView textViewNextVisit;
    // protected TextView textview_positive_date;
     protected View view_last_visit_row;
     protected View view_most_due_overdue_row;
     protected View view_family_row;
     protected View view_positive_date_row;
     protected RelativeLayout rlLastVisit;
+    protected RelativeLayout rlNextVisit;
     protected RelativeLayout rlUpcomingServices;
     protected RelativeLayout rlFamilyServicesDue;
     protected RelativeLayout visitStatus;
@@ -115,7 +117,10 @@ public class BasePmtctProfileActivity extends BaseProfileActivity implements Pmt
         tvUpComingServices = findViewById(R.id.textview_name_due);
         tvFamilyStatus = findViewById(R.id.textview_family_has);
         //textview_positive_date = findViewById(R.id.textview_positive_date);
+        textViewNextVisit = findViewById(R.id.tv_next_visit);
+
         rlLastVisit = findViewById(R.id.rlLastVisit);
+        rlNextVisit = findViewById(R.id.rlNextVisit);
         rlUpcomingServices = findViewById(R.id.rlUpcomingServices);
         rlFamilyServicesDue = findViewById(R.id.rlFamilyServicesDue);
         //rlMalariaPositiveDate = findViewById(R.id.rlMalariaPositiveDate);
@@ -214,6 +219,21 @@ public class BasePmtctProfileActivity extends BaseProfileActivity implements Pmt
     @Override
     public void hideDone() {
         visitDone.setVisibility(View.GONE);
+    }
+
+    @Override
+    public void showNextDue() {
+        rlNextVisit.setVisibility(View.VISIBLE);
+    }
+
+    @Override
+    public void hideNextDue() {
+        rlNextVisit.setVisibility(View.GONE);
+    }
+
+    @Override
+    public void setDueDays(String dueDays) {
+        textViewNextVisit.setText(getString(R.string.next_visit_date,dueDays));
     }
 
     @SuppressLint("DefaultLocale")

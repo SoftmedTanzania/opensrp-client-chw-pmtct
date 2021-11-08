@@ -54,5 +54,6 @@
     <string name="register_pmtct">Register Pmtct</string>
     <string name="record_pmtct">Record PMTCT Followup</string>
     <string name="return_to_pmtct_clients">Return to all Pmtct Clients</string>
+    <string name="next_visit_date">Next Due in %s</string>
 
 </resources>

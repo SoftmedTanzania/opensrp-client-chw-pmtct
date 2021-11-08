@@ -30,6 +30,12 @@ public interface PmtctProfileContract {
         void showDone();
 
        void hideDone();
+
+       void showNextDue();
+
+       void hideNextDue();
+
+       void setDueDays(String dueDays);
     }
 
     interface Presenter {
@@ -46,6 +52,8 @@ public interface PmtctProfileContract {
         void recordPmtctButton(String visitState);
 
         void visitRow(String visitState);
+
+        void nextRow(String visitState,String visitDue);
     }
 
     interface Interactor {

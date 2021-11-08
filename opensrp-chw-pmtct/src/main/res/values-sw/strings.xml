@@ -51,6 +51,7 @@
     <string name="record_pmtct">Rekodi ufuatiliaji wa pmtct</string>
     <string name="pmtct">PMTCT</string>
     <string name="register_pmtct">Sajili Pmtct</string>
-    <string name="return_to_pmtct_clients">Return to all Pmtct Clients</string>
+    <string name="return_to_pmtct_clients">Rudi kwa Pmtct Clients</string>
+    <string name="next_visit_date">Ijayo ni %s</string>
 
 </resources>

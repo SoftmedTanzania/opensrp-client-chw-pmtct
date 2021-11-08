@@ -58,6 +58,21 @@ public class BasePmtctProfilePresenter implements PmtctProfileContract.Presenter
     }
 
     @Override
+    public void nextRow(String visitState,String visitDue) {
+        if(getView() == null){
+            return;
+        }
+
+        if(("NOT_DUE_YET").equalsIgnoreCase(visitState)){
+            getView().showNextDue();
+            getView().setDueDays(visitDue);
+        }else {
+            getView().hideNextDue();
+        }
+
+    }
+
+    @Override
     @Nullable
     public PmtctProfileContract.View getView() {
         if (view != null && view.get() != null)
