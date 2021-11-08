@@ -1,4 +1,4 @@
 
-# opensrp-client-chw-barebones
-OpenSRP client chw starter files for module library
+# opensrp-client-chw-pmtct
+OpenSRP client chw PMTCT module library
 

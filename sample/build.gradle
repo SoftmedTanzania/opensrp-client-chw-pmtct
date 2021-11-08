@@ -98,7 +98,7 @@ dependencies {
         exclude group: 'com.android.support', module: 'appcompat-v7'
     }
 
-    implementation project(':opensrp-chw-barebones')
+    implementation project(':opensrp-chw-pmtct')
 
     implementation 'org.jbundle.util.osgi.wrapped:org.jbundle.util.osgi.wrapped.org.apache.http.client:4.1.2'
 
