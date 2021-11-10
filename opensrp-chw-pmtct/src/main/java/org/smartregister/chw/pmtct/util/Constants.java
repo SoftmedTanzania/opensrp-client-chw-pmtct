@@ -6,6 +6,8 @@ public interface Constants {
     String ENCOUNTER_TYPE = "encounter_type";
     String STEP_ONE = "step1";
     String STEP_TWO = "step2";
+    String HOME_VISIT_GROUP = "home_visit_group";
+
 
     interface JSON_FORM_EXTRA {
         String JSON = "json";
@@ -15,6 +17,7 @@ public interface Constants {
     interface EVENT_TYPE {
         String PMTCT_REGISTRATION = "PMTCT Registration";
         String PMTCT_FOLLOWUP = "PMTCT Follow-up Visit";
+        String VOID_EVENT = "Void Event";
     }
 
     interface FORMS {
@@ -34,6 +37,8 @@ public interface Constants {
         String FAMILY_BASE_ENTITY_ID = "FAMILY_BASE_ENTITY_ID";
         String ACTION = "ACTION";
         String PMTCT_FORM_NAME = "PMTCT_FORM_NAME";
+        String EDIT_MODE = "editMode";
+        String MEMBER_PROFILE_OBJECT = "MemberObject";
 
     }
 

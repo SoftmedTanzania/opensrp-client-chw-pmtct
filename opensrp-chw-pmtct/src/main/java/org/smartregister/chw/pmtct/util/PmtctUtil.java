@@ -13,25 +13,24 @@ import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
 import android.telephony.TelephonyManager;
 import android.text.Html;
 import android.text.Spanned;
 import android.widget.Toast;
 
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+
 import org.json.JSONObject;
 import org.opensrp.api.constants.Gender;
 import org.smartregister.chw.pmtct.PmtctLibrary;
 import org.smartregister.chw.pmtct.contract.BasePmtctCallDialogContract;
-import org.smartregister.chw.pmtct.dao.PmtctDao;
 import org.smartregister.clientandeventmodel.Event;
 import org.smartregister.pmtct.R;
 import org.smartregister.repository.AllSharedPreferences;
 import org.smartregister.repository.BaseRepository;
 import org.smartregister.sync.ClientProcessorForJava;
 import org.smartregister.sync.helper.ECSyncHelper;
-import org.smartregister.util.JsonFormUtils;
 import org.smartregister.util.PermissionUtils;
 
 import java.util.Date;
@@ -136,7 +135,7 @@ public class PmtctUtil {
 
         @Override
         protected Void doInBackground(Void... voids) {
-           // PmtctDao.closeMalariaMemberFromRegister(baseEntityId);
+            // PmtctDao.closeMalariaMemberFromRegister(baseEntityId);
             return null;
         }
 
