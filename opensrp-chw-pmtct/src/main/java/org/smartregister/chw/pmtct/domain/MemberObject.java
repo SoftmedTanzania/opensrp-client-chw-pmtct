@@ -1,7 +1,8 @@
 package org.smartregister.chw.pmtct.domain;
 
+import org.smartregister.util.Utils;
+
 import java.io.Serializable;
-import java.util.Date;
 
 public class MemberObject implements Serializable {
 
@@ -16,16 +17,16 @@ public class MemberObject implements Serializable {
     private String age;
     private String relationalid;
     private String details;
-   // private String dateChwMalariaTest;
+    // private String dateChwMalariaTest;
     private String feverMalariaChw;
     private String feverDuration;
     private String dateHfMalariaTest;
-//    private Date malariaTestDate;
+    //    private Date malariaTestDate;
 //    private String malariaTreat;
     private String famLlin;
     private String llin2Days;
     private String llinCondition;
-   // private String malariaEduChw;
+    // private String malariaEduChw;
     private String baseEntityId;
     private String relationalId;
     private String primaryCareGiver;
@@ -43,6 +44,7 @@ public class MemberObject implements Serializable {
 
     public MemberObject() {
     }
+
     public String getFirstName() {
         return firstName;
     }
@@ -65,6 +67,10 @@ public class MemberObject implements Serializable {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public String getFullName() {
+        return Utils.getName(getFirstName(), getLastName());
     }
 
     public String getAge() {
@@ -187,6 +193,7 @@ public class MemberObject implements Serializable {
     public void setLlinCondition(String llinCondition) {
         this.llinCondition = llinCondition;
     }
+
     /*
     public String getMalariaEduChw() {
         return malariaEduChw;

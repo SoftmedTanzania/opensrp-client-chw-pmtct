@@ -2,6 +2,8 @@ package org.smartregister.chw.pmtct;
 
 import org.smartregister.Context;
 import org.smartregister.CoreLibrary;
+import org.smartregister.chw.pmtct.repository.VisitDetailsRepository;
+import org.smartregister.chw.pmtct.repository.VisitRepository;
 import org.smartregister.repository.Repository;
 import org.smartregister.sync.ClientProcessorForJava;
 import org.smartregister.sync.helper.ECSyncHelper;
@@ -10,6 +12,37 @@ import id.zelory.compressor.Compressor;
 
 public class PmtctLibrary {
     private static PmtctLibrary instance;
+    private VisitRepository visitRepository;
+    private VisitDetailsRepository visitDetailsRepository;
+
+    public boolean isSubmitOnSave() {
+        return submitOnSave;
+    }
+
+    public void setSubmitOnSave(boolean submitOnSave) {
+        this.submitOnSave = submitOnSave;
+    }
+
+    private boolean submitOnSave = false;
+
+    public String getSourceDateFormat() {
+        return sourceDateFormat;
+    }
+
+    public void setSourceDateFormat(String sourceDateFormat) {
+        this.sourceDateFormat = sourceDateFormat;
+    }
+
+    public String getSaveDateFormat() {
+        return saveDateFormat;
+    }
+
+    public void setSaveDateFormat(String saveDateFormat) {
+        this.saveDateFormat = saveDateFormat;
+    }
+
+    private String sourceDateFormat = "dd-MM-yyyy";
+    private String saveDateFormat = "yyyy-MM-dd";
 
     private final Context context;
     private final Repository repository;
@@ -78,4 +111,17 @@ public class PmtctLibrary {
         this.clientProcessorForJava = clientProcessorForJava;
     }
 
+    public VisitRepository visitRepository() {
+        if (visitRepository == null) {
+            visitRepository = new VisitRepository();
+        }
+        return visitRepository;
+    }
+
+    public VisitDetailsRepository visitDetailsRepository() {
+        if (visitDetailsRepository == null) {
+            visitDetailsRepository = new VisitDetailsRepository();
+        }
+        return visitDetailsRepository;
+    }
 }

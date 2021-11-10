@@ -6,10 +6,6 @@ import android.content.Intent;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
-import android.support.annotation.Nullable;
-import android.support.v4.view.ViewPager;
-import android.support.v7.app.ActionBar;
-import android.support.v7.widget.Toolbar;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.ImageView;
@@ -17,6 +13,11 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.widget.Toolbar;
+import androidx.viewpager.widget.ViewPager;
 
 import org.apache.commons.lang3.StringUtils;
 import org.joda.time.DateTime;
@@ -53,7 +54,7 @@ public class BasePmtctProfileActivity extends BaseProfileActivity implements Pmt
     protected TextView textViewRecordPmtct;
     protected TextView textViewRecordAnc;
     protected TextView textViewNextVisit;
-   // protected TextView textview_positive_date;
+    // protected TextView textview_positive_date;
     protected View view_last_visit_row;
     protected View view_most_due_overdue_row;
     protected View view_family_row;
@@ -65,7 +66,7 @@ public class BasePmtctProfileActivity extends BaseProfileActivity implements Pmt
     protected RelativeLayout visitStatus;
     protected ImageView imageViewCross;
     protected TextView textViewUndo;
-   // protected RelativeLayout rlMalariaPositiveDate;
+    // protected RelativeLayout rlMalariaPositiveDate;
     private TextView tvUpComingServices;
     private TextView tvFamilyStatus;
     private SimpleDateFormat dateFormat = new SimpleDateFormat("dd MMM", Locale.getDefault());
@@ -233,7 +234,7 @@ public class BasePmtctProfileActivity extends BaseProfileActivity implements Pmt
 
     @Override
     public void setDueDays(String dueDays) {
-        textViewNextVisit.setText(getString(R.string.next_visit_date,dueDays));
+        textViewNextVisit.setText(getString(R.string.next_visit_date, dueDays));
     }
 
     @SuppressLint("DefaultLocale")

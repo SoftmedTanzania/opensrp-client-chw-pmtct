@@ -22,6 +22,7 @@ public class PmtctDao extends AbstractDao {
 
         return res.get(0);
     }
+
     public static Date getPmtctFollowUpVisitDate(String baseEntityID) {
         String sql = "select followup_visit_date from ec_pmtct_followup where base_entity_id ='" + baseEntityID + "'";
 
