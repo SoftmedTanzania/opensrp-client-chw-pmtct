@@ -240,7 +240,7 @@ public class BasePmtctProfileActivity extends BaseProfileActivity implements Pmt
     @SuppressLint("DefaultLocale")
     @Override
     public void setProfileViewWithData() {
-        int age = new Period(new DateTime(memberObject.getAge()), new DateTime()).getYears();
+        int age = memberObject.getAge();
         textViewName.setText(String.format("%s %s %s, %d", memberObject.getFirstName(),
                 memberObject.getMiddleName(), memberObject.getLastName(), age));
         textViewGender.setText(PmtctUtil.getGenderTranslated(this, memberObject.getGender()));
