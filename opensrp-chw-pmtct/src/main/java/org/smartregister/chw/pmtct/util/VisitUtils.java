@@ -20,7 +20,9 @@ import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 
 public class VisitUtils {
@@ -41,6 +43,22 @@ public class VisitUtils {
         return PmtctLibrary.getInstance().visitDetailsRepository().getVisits(visitID);
     }
 
+
+    public static Map<String, List<VisitDetail>> getVisitGroups(List<VisitDetail> detailList) {
+        Map<String, List<VisitDetail>> visitMap = new HashMap<>();
+
+        for (VisitDetail visitDetail : detailList) {
+
+            List<VisitDetail> visitDetailList = visitMap.get(visitDetail.getVisitKey());
+            if (visitDetailList == null)
+                visitDetailList = new ArrayList<>();
+
+            visitDetailList.add(visitDetail);
+
+            visitMap.put(visitDetail.getVisitKey(), visitDetailList);
+        }
+        return visitMap;
+    }
 
     /**
      * To be invoked for manual processing
