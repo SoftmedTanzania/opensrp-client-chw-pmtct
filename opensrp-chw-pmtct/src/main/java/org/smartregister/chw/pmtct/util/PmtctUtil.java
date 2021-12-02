@@ -11,15 +11,11 @@ import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
-import android.os.AsyncTask;
 import android.os.Build;
 import android.telephony.TelephonyManager;
 import android.text.Html;
 import android.text.Spanned;
 import android.widget.Toast;
-
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
 
 import org.json.JSONObject;
 import org.opensrp.api.constants.Gender;
@@ -35,6 +31,8 @@ import org.smartregister.util.PermissionUtils;
 
 import java.util.Date;
 
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import timber.log.Timber;
 
 import static org.smartregister.util.Utils.getAllSharedPreferences;
@@ -126,20 +124,6 @@ public class PmtctUtil {
         return R.mipmap.ic_member;
     }
 
-    public static class CloseMalariaMemberFromRegister extends AsyncTask<Void, Void, Void> {
-        private final String baseEntityId;
-
-        public CloseMalariaMemberFromRegister(String baseEntityId) {
-            this.baseEntityId = baseEntityId;
-        }
-
-        @Override
-        protected Void doInBackground(Void... voids) {
-            // PmtctDao.closeMalariaMemberFromRegister(baseEntityId);
-            return null;
-        }
-
-    }
 
     public static String getGenderTranslated(Context context, String gender) {
         if (gender.equalsIgnoreCase(Gender.MALE.toString())) {

@@ -14,14 +14,7 @@ import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.widget.Toolbar;
-import androidx.viewpager.widget.ViewPager;
-
 import org.apache.commons.lang3.StringUtils;
-import org.joda.time.DateTime;
-import org.joda.time.Period;
 import org.smartregister.chw.pmtct.contract.PmtctProfileContract;
 import org.smartregister.chw.pmtct.custom_views.BasePmtctFloatingMenu;
 import org.smartregister.chw.pmtct.dao.PmtctDao;
@@ -39,6 +32,10 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.widget.Toolbar;
+import androidx.viewpager.widget.ViewPager;
 import de.hdodenhof.circleimageview.CircleImageView;
 import timber.log.Timber;
 
@@ -54,7 +51,6 @@ public class BasePmtctProfileActivity extends BaseProfileActivity implements Pmt
     protected TextView textViewRecordPmtct;
     protected TextView textViewRecordAnc;
     protected TextView textViewNextVisit;
-    // protected TextView textview_positive_date;
     protected View view_last_visit_row;
     protected View view_most_due_overdue_row;
     protected View view_family_row;
@@ -66,7 +62,6 @@ public class BasePmtctProfileActivity extends BaseProfileActivity implements Pmt
     protected RelativeLayout visitStatus;
     protected ImageView imageViewCross;
     protected TextView textViewUndo;
-    // protected RelativeLayout rlMalariaPositiveDate;
     private TextView tvUpComingServices;
     private TextView tvFamilyStatus;
     private SimpleDateFormat dateFormat = new SimpleDateFormat("dd MMM", Locale.getDefault());
@@ -117,14 +112,12 @@ public class BasePmtctProfileActivity extends BaseProfileActivity implements Pmt
         imageViewCross = findViewById(R.id.tick_image);
         tvUpComingServices = findViewById(R.id.textview_name_due);
         tvFamilyStatus = findViewById(R.id.textview_family_has);
-        //textview_positive_date = findViewById(R.id.textview_positive_date);
         textViewNextVisit = findViewById(R.id.tv_next_visit);
 
         rlLastVisit = findViewById(R.id.rlLastVisit);
         rlNextVisit = findViewById(R.id.rlNextVisit);
         rlUpcomingServices = findViewById(R.id.rlUpcomingServices);
         rlFamilyServicesDue = findViewById(R.id.rlFamilyServicesDue);
-        //rlMalariaPositiveDate = findViewById(R.id.rlMalariaPositiveDate);
         textViewVisitDone = findViewById(R.id.textview_visit_done);
         visitStatus = findViewById(R.id.record_visit_not_done_bar);
         visitDone = findViewById(R.id.visit_done_bar);
@@ -145,7 +138,6 @@ public class BasePmtctProfileActivity extends BaseProfileActivity implements Pmt
         rlLastVisit.setOnClickListener(this);
         rlUpcomingServices.setOnClickListener(this);
         rlFamilyServicesDue.setOnClickListener(this);
-        //rlMalariaPositiveDate.setOnClickListener(this);
         textViewRecordPmtct.setOnClickListener(this);
         textViewRecordAnc.setOnClickListener(this);
         textViewUndo.setOnClickListener(this);
@@ -253,9 +245,6 @@ public class BasePmtctProfileActivity extends BaseProfileActivity implements Pmt
         if (StringUtils.isNotBlank(memberObject.getPrimaryCareGiver()) && memberObject.getPrimaryCareGiver().equals(memberObject.getBaseEntityId())) {
             findViewById(R.id.primary_malaria_caregiver).setVisibility(View.VISIBLE);
         }
-//        if (memberObject.getMalariaTestDate() != null) {
-//            textview_positive_date.setText(getString(R.string.malaria_positive) + " " + formatTime(memberObject.getMalariaTestDate()));
-//        }
     }
 
     @Override

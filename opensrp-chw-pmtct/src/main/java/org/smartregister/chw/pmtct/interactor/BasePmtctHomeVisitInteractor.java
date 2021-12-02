@@ -3,8 +3,6 @@ package org.smartregister.chw.pmtct.interactor;
 
 import android.content.Context;
 
-import androidx.annotation.VisibleForTesting;
-
 import com.google.gson.Gson;
 
 import org.apache.commons.lang3.StringUtils;
@@ -38,6 +36,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
+import androidx.annotation.VisibleForTesting;
 import timber.log.Timber;
 
 

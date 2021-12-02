@@ -48,12 +48,12 @@ public class BasePmtctRegisterFragmentPresenterPmtct {
 
     @Test
     public void getDefaultSortQuery() {
-        Assert.assertEquals(Constants.TABLES.MALARIA_CONFIRMATION + "." + DBConstants.KEY.LAST_INTERACTED_WITH + " DESC ", basePmtctRegisterFragmentPresenter.getDefaultSortQuery());
+        Assert.assertEquals(Constants.TABLES.PMTCT_REGISTRATION + "." + DBConstants.KEY.LAST_INTERACTED_WITH + " DESC ", basePmtctRegisterFragmentPresenter.getDefaultSortQuery());
     }
 
     @Test
     public void getMainTable() {
-        Assert.assertEquals(Constants.TABLES.MALARIA_CONFIRMATION, basePmtctRegisterFragmentPresenter.getMainTable());
+        Assert.assertEquals(Constants.TABLES.PMTCT_REGISTRATION, basePmtctRegisterFragmentPresenter.getMainTable());
     }
 
     @Test

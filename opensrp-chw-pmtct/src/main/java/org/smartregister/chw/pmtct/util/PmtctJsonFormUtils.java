@@ -23,13 +23,13 @@ public class PmtctJsonFormUtils extends org.smartregister.util.JsonFormUtils {
     public static Triple<Boolean, JSONObject, JSONArray> validateParameters(String jsonString) {
 
         JSONObject jsonForm = toJSONObject(jsonString);
-        JSONArray fields = malariaFormFields(jsonForm);
+        JSONArray fields = pmtctFormFields(jsonForm);
 
         Triple<Boolean, JSONObject, JSONArray> registrationFormParams = Triple.of(jsonForm != null && fields != null, jsonForm, fields);
         return registrationFormParams;
     }
 
-    public static JSONArray malariaFormFields(JSONObject jsonForm) {
+    public static JSONArray pmtctFormFields(JSONObject jsonForm) {
         try {
             JSONArray fieldsOne = fields(jsonForm, STEP_ONE);
             JSONArray fieldsTwo = fields(jsonForm, STEP_TWO);
@@ -78,7 +78,7 @@ public class PmtctJsonFormUtils extends org.smartregister.util.JsonFormUtils {
 
         if (Constants.EVENT_TYPE.PMTCT_REGISTRATION.equals(encounter_type)) {
             encounter_type = Constants.TABLES.PMTCT_REGISTRATION;
-        }else if(Constants.EVENT_TYPE.PMTCT_FOLLOWUP.equals(encounter_type)){
+        } else if (Constants.EVENT_TYPE.PMTCT_FOLLOWUP.equals(encounter_type)) {
             encounter_type = Constants.TABLES.PMTCT_FOLLOW_UP;
         }
         return org.smartregister.util.JsonFormUtils.createEvent(fields, getJSONObject(jsonForm, METADATA), formTag(allSharedPreferences), entityId, getString(jsonForm, ENCOUNTER_TYPE), encounter_type);

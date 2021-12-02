@@ -20,16 +20,9 @@ public interface Constants {
         String VOID_EVENT = "Void Event";
     }
 
-    interface FORMS {
-        String MALARIA_REGISTRATION = "malaria_confirmation";
-        String MALARIA_FOLLOW_UP_VISIT = "malaria_followup_visit";
-    }
-
     interface TABLES {
         String PMTCT_REGISTRATION = "ec_pmtct_registration";
         String PMTCT_FOLLOW_UP = "ec_pmtct_followup";
-        String MALARIA_CONFIRMATION = "ec_malaria_confirmation";
-        String MALARIA_FOLLOW_UP = "ec_malaria_follow_up_visit";
     }
 
     interface ACTIVITY_PAYLOAD {
@@ -48,12 +41,7 @@ public interface Constants {
     }
 
     interface CONFIGURATION {
-        String MALARIA_CONFIRMATION = "malaria_confirmation";
         String PMTCT_REGISTRATION = "pmtct_registration";
-    }
-
-    interface MALARIA_MEMBER_OBJECT {
-        String MEMBER_OBJECT = "memberObject";
     }
 
 }

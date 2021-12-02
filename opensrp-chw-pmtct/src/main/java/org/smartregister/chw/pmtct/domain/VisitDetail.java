@@ -8,8 +8,8 @@ public class VisitDetail {
     private String baseEntityId;
     private String visitKey;
     private String parentCode;
-    private String details; //
-    private String humanReadable; //
+    private String details;
+    private String humanReadable;
     private String jsonDetails;
     private String preProcessedJson;
     private String preProcessedType;

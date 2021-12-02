@@ -28,15 +28,9 @@ public class TestDaoPmtct extends PmtctDao {
         setRepository(repository);
     }
 
-    @Test
-    public void testGetMalariaTestDate() {
-        Mockito.doReturn(database).when(repository).getReadableDatabase();
-        //PmtctDao.getMalariaTestDate("123456");
-        Mockito.verify(database).rawQuery(Mockito.anyString(), Mockito.any());
-    }
 
     @Test
-    public void testIsRegisteredForMalaria() {
+    public void testIsRegisteredForPmtct() {
         Mockito.doReturn(database).when(repository).getReadableDatabase();
         boolean registered = PmtctDao.isRegisteredForPmtct("12345");
         Mockito.verify(database).rawQuery(Mockito.anyString(), Mockito.any());

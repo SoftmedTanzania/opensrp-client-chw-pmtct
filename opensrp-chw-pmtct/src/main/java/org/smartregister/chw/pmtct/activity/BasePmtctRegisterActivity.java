@@ -4,9 +4,6 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 
-import androidx.annotation.MenuRes;
-import androidx.fragment.app.Fragment;
-
 import com.google.android.material.bottomnavigation.LabelVisibilityMode;
 import com.vijay.jsonwizard.constants.JsonFormConstants;
 import com.vijay.jsonwizard.domain.Form;
@@ -38,6 +35,8 @@ import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 
+import androidx.annotation.MenuRes;
+import androidx.fragment.app.Fragment;
 import timber.log.Timber;
 
 public class BasePmtctRegisterActivity extends BaseRegisterActivity implements PmtctRegisterContract.View {
