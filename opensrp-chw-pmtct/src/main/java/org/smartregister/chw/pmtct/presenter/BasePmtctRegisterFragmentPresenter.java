@@ -60,7 +60,7 @@ public class BasePmtctRegisterFragmentPresenter implements PmtctRegisterFragment
 
     @Override
     public void initializeQueries(String mainCondition) {
-        String tableName = Constants.TABLES.PMTCT_REGISTRATION;
+        String tableName = getMainTable();
         mainCondition = trim(getMainCondition()).equals("") ? mainCondition : getMainCondition();
         String countSelect = model.countSelect(tableName, mainCondition);
         String mainSelect = model.mainSelect(tableName, mainCondition);
