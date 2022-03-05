@@ -1,10 +1,12 @@
 package org.smartregister.chw.pmtct.domain;
 
-import org.joda.time.DateTime;
 import org.joda.time.Period;
 import org.smartregister.util.Utils;
 
 import java.io.Serializable;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
 
 import timber.log.Timber;
 
@@ -68,7 +70,8 @@ public class MemberObject implements Serializable {
 
     public int getAge() {
         try {
-            return new Period(new DateTime((age)), new DateTime()).getYears();
+            Date dob = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).parse(age);
+            return new Period(dob.getTime()).getYears();
         } catch (Exception e) {
             Timber.e(e);
         }
