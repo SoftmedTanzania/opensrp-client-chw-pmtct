@@ -23,6 +23,7 @@ public interface Constants {
     interface TABLES {
         String PMTCT_REGISTRATION = "ec_pmtct_registration";
         String PMTCT_FOLLOW_UP = "ec_pmtct_followup";
+        String PMTCT_HVL_RESULTS = "ec_pmtct_hvl_results";
     }
 
     interface ACTIVITY_PAYLOAD {
