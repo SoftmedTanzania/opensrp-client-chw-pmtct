@@ -70,7 +70,7 @@ public class BasePmtctRegisterPresenter implements PmtctRegisterContract.Present
 //        implement
     }
 
-    private PmtctRegisterContract.View getView() {
+    protected PmtctRegisterContract.View getView() {
         if (viewReference != null)
             return viewReference.get();
         else
