@@ -7,6 +7,7 @@ public class DBConstants {
         public static final String MIDDLE_NAME = "middle_name";
         public static final String LAST_NAME = "last_name";
         public static final String BASE_ENTITY_ID = "base_entity_id";
+        public static final String ENTITY_ID = "entity_id";
         public static final String FAMILY_BASE_ENTITY_ID = "family_base_entity_id";
         public static final String DOB = "dob";
         public static final String DOD = "dod";
@@ -29,6 +30,12 @@ public class DBConstants {
         public static final String PHONE_NUMBER = "phone_number";
         public static final String GEST_AGE = "gest_age";
         public static final String CHILD = "ec_child";
+        public static final String FORM_SUBMISSION_ID = "form_submission_id";
+        public static final String HVL_RESULT = "hvl_result";
+        public static final String HVL_SAMPLE_ID = "hvl_sample_id";
+        public static final String HVL_SAMPLE_COLLECTION_DATE = "hvl_collection_date";
+        public static final String HVL_RESULT_DATE = "hvl_result_date";
+        public static final String PARENT_EVENT_FORM_ID = "parent_event_form_id";
 
     }
 }

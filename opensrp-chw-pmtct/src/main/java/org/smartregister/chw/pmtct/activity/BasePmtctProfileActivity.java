@@ -55,24 +55,27 @@ public class BasePmtctProfileActivity extends BaseProfileActivity implements Pmt
     protected View view_most_due_overdue_row;
     protected View view_family_row;
     protected View view_positive_date_row;
+    protected View view_hvl_results_row;
+    protected View view_baseline_results_row;
     protected RelativeLayout rlLastVisit;
     protected RelativeLayout rlNextVisit;
     protected RelativeLayout rlUpcomingServices;
     protected RelativeLayout rlFamilyServicesDue;
     protected RelativeLayout visitStatus;
+    protected RelativeLayout rlHvlResults;
+    protected RelativeLayout rlBaselineResults;
     protected ImageView imageViewCross;
     protected TextView textViewUndo;
-    private TextView tvUpComingServices;
-    private TextView tvFamilyStatus;
-    private SimpleDateFormat dateFormat = new SimpleDateFormat("dd MMM", Locale.getDefault());
     protected TextView textViewVisitDone;
     protected RelativeLayout visitDone;
     protected LinearLayout recordVisits;
     protected TextView textViewVisitDoneEdit;
     protected TextView textViewRecordAncNotDone;
-
-    private ProgressBar progressBar;
     protected BasePmtctFloatingMenu basePmtctFloatingMenu;
+    private TextView tvUpComingServices;
+    private TextView tvFamilyStatus;
+    private SimpleDateFormat dateFormat = new SimpleDateFormat("dd MMM", Locale.getDefault());
+    private ProgressBar progressBar;
 
     public static void startProfileActivity(Activity activity, String baseEntityId) {
         Intent intent = new Intent(activity, BasePmtctProfileActivity.class);
@@ -129,12 +132,17 @@ public class BasePmtctProfileActivity extends BaseProfileActivity implements Pmt
         textViewRecordAnc = findViewById(R.id.textview_record_anc);
         textViewUndo = findViewById(R.id.textview_undo);
         imageView = findViewById(R.id.imageview_profile);
-
+        view_hvl_results_row = findViewById(R.id.view_hvl_results_row);
+        view_baseline_results_row = findViewById(R.id.view_baseline_results_row);
+        rlBaselineResults = findViewById(R.id.rlBaselineInvestigationResults);
+        rlHvlResults = findViewById(R.id.rlHvlResults);
 
         textViewVisitDoneEdit.setOnClickListener(this);
         textViewVisitDoneEdit.setVisibility(View.GONE);
 
         textViewRecordAncNotDone.setOnClickListener(this);
+        rlHvlResults.setOnClickListener(this);
+        rlBaselineResults.setOnClickListener(this);
         rlLastVisit.setOnClickListener(this);
         rlUpcomingServices.setOnClickListener(this);
         rlFamilyServicesDue.setOnClickListener(this);
@@ -177,6 +185,10 @@ public class BasePmtctProfileActivity extends BaseProfileActivity implements Pmt
             this.openUpcomingService();
         } else if (id == R.id.rlFamilyServicesDue) {
             this.openFamilyDueServices();
+        } else if (id == R.id.rlHvlResults) {
+            this.openHvlResultsHistory();
+        } else if (id == R.id.rlBaselineInvestigationResults) {
+            this.openBaselineInvestigationResults();
         }
     }
 
@@ -326,6 +338,16 @@ public class BasePmtctProfileActivity extends BaseProfileActivity implements Pmt
         //implement
     }
 
+    @Override
+    public void openHvlResultsHistory() {
+        //implement
+    }
+
+    @Override
+    public void openBaselineInvestigationResults() {
+        //implement
+    }
+
     @Nullable
     private String formatTime(Date dateTime) {
         try {
@@ -339,6 +361,7 @@ public class BasePmtctProfileActivity extends BaseProfileActivity implements Pmt
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == Constants.REQUEST_CODE_GET_JSON && resultCode == RESULT_OK) {
             profilePresenter.saveForm(data.getStringExtra(Constants.JSON_FORM_EXTRA.JSON));
             finish();

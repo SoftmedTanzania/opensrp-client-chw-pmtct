@@ -19,6 +19,10 @@ public interface PmtctProfileContract {
 
         void openFamilyDueServices();
 
+        void openHvlResultsHistory();
+
+        void openBaselineInvestigationResults();
+
         void showProgressBar(boolean status);
 
         void recordAnc(MemberObject memberObject);

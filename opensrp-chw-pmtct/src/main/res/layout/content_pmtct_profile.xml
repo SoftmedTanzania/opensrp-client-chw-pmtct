@@ -194,6 +194,105 @@
 
         </RelativeLayout>
 
+        <RelativeLayout
+            android:id="@+id/rlHvlResults"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/view_family_row"
+            android:background="@drawable/list_item_background_selctor"
+            android:padding="20dp"
+            tools:visibility="visible"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/family_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/childrow_family" />
+
+            <ImageView
+                android:id="@+id/iv_family_services_arrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/row_goto" />
+
+            <org.smartregister.view.customcontrols.CustomFontTextView
+                android:id="@+id/textview_family_has"
+                style="@style/CustomFontTextViewStyle.ListView.Normal.MultipleLines"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/family_image"
+                android:gravity="center_horizontal"
+                android:text="@string/hvl_results"
+                android:textColor="@android:color/black" />
+
+            <org.smartregister.view.customcontrols.CustomFontTextView
+                android:id="@+id/text_view_family_profile"
+                style="@style/CustomFontTextViewStyle.ListView.Normal.MultipleLines"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textview_family_has"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/family_image"
+                android:text="@string/view_hvl_results"
+                android:textColor="@android:color/darker_gray" />
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/rlBaselineInvestigationResults"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/view_hvl_results_row"
+            android:background="@drawable/list_item_background_selctor"
+            android:padding="20dp"
+            tools:visibility="visible"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/family_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/childrow_family" />
+
+            <ImageView
+                android:id="@+id/iv_family_services_arrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/row_goto" />
+
+            <org.smartregister.view.customcontrols.CustomFontTextView
+                android:id="@+id/textview_family_has"
+                style="@style/CustomFontTextViewStyle.ListView.Normal.MultipleLines"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/family_image"
+                android:gravity="center_horizontal"
+                android:text="@string/baseline_investigation_results"
+                android:textColor="@android:color/black" />
+
+            <org.smartregister.view.customcontrols.CustomFontTextView
+                android:id="@+id/text_view_family_profile"
+                style="@style/CustomFontTextViewStyle.ListView.Normal.MultipleLines"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textview_family_has"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/family_image"
+                android:text="@string/view_cd4_results"
+                android:textColor="@android:color/darker_gray" />
+
+        </RelativeLayout>
+
         <View
             android:id="@+id/view_notification_and_referral_row"
             android:layout_width="match_parent"
@@ -222,7 +321,6 @@
             android:layout_below="@+id/rlUpcomingServices"
             android:background="@color/light_grey"
             android:visibility="gone" />
-
         <View
             android:id="@+id/view_most_due_overdue_row"
             android:layout_width="match_parent"
@@ -230,12 +328,25 @@
             android:layout_below="@+id/rlUpcomingServices"
             android:background="@color/light_grey"
             android:visibility="visible" />
-
         <View
             android:id="@+id/view_family_row"
             android:layout_width="match_parent"
             android:layout_height="1px"
             android:layout_below="@+id/rlFamilyServicesDue"
+            android:background="@color/light_grey"
+            android:visibility="gone" />
+        <View
+            android:id="@+id/view_hvl_results_row"
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_below="@+id/rlHvlResults"
+            android:background="@color/light_grey"
+            android:visibility="gone" />
+        <View
+            android:id="@+id/view_baseline_results_row"
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_below="@+id/rlBaselineInvestigationResults"
             android:background="@color/light_grey"
             android:visibility="gone" />
 
