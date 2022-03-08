@@ -17,6 +17,7 @@ public interface Constants {
     interface EVENT_TYPE {
         String PMTCT_REGISTRATION = "PMTCT Registration";
         String PMTCT_FOLLOWUP = "PMTCT Follow-up Visit";
+        String PMTCT_HVL_RESULTS_EVENT = "PMTCT HVL Results";
         String VOID_EVENT = "Void Event";
     }
 
@@ -32,6 +33,8 @@ public interface Constants {
         String ACTION = "ACTION";
         String PMTCT_FORM_NAME = "PMTCT_FORM_NAME";
         String EDIT_MODE = "editMode";
+        String PMTCT_FORM = "PMTCT_FORM";
+        String PARENT_FORM_ENTITY_ID = "PARENT_FORM_ENTITY_ID";
         String MEMBER_PROFILE_OBJECT = "MemberObject";
 
     }
