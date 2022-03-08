@@ -151,8 +151,8 @@
             android:layout_below="@+id/view_most_due_overdue_row"
             android:background="@drawable/list_item_background_selctor"
             android:padding="20dp"
-            tools:visibility="visible"
-            android:visibility="gone">
+            android:visibility="gone"
+            tools:visibility="visible">
 
             <ImageView
                 android:id="@+id/family_image"
@@ -201,16 +201,16 @@
             android:layout_below="@+id/view_family_row"
             android:background="@drawable/list_item_background_selctor"
             android:padding="20dp"
-            tools:visibility="visible"
-            android:visibility="gone">
+            android:visibility="gone"
+            tools:visibility="visible">
 
             <ImageView
-                android:id="@+id/family_image"
+                android:id="@+id/hvl_image"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_marginRight="10dp"
-                android:src="@drawable/childrow_family" />
+                android:src="@drawable/ic_hvl" />
 
             <ImageView
                 android:id="@+id/iv_family_services_arrow"
@@ -226,7 +226,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-                android:layout_toRightOf="@+id/family_image"
+                android:layout_toRightOf="@+id/hvl_image"
                 android:gravity="center_horizontal"
                 android:text="@string/hvl_results"
                 android:textColor="@android:color/black" />
@@ -238,11 +238,12 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/textview_family_has"
                 android:layout_marginLeft="10dp"
-                android:layout_toRightOf="@+id/family_image"
+                android:layout_toRightOf="@+id/hvl_image"
                 android:text="@string/view_hvl_results"
                 android:textColor="@android:color/darker_gray" />
 
         </RelativeLayout>
+
         <RelativeLayout
             android:id="@+id/rlBaselineInvestigationResults"
             android:layout_width="match_parent"
@@ -250,16 +251,16 @@
             android:layout_below="@+id/view_hvl_results_row"
             android:background="@drawable/list_item_background_selctor"
             android:padding="20dp"
-            tools:visibility="visible"
-            android:visibility="gone">
+            android:visibility="gone"
+            tools:visibility="visible">
 
             <ImageView
-                android:id="@+id/family_image"
+                android:id="@+id/baseline_image"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_marginRight="10dp"
-                android:src="@drawable/childrow_family" />
+                android:src="@drawable/ic_testing" />
 
             <ImageView
                 android:id="@+id/iv_family_services_arrow"
@@ -275,7 +276,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-                android:layout_toRightOf="@+id/family_image"
+                android:layout_toRightOf="@+id/baseline_image"
                 android:gravity="center_horizontal"
                 android:text="@string/baseline_investigation_results"
                 android:textColor="@android:color/black" />
@@ -287,7 +288,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/textview_family_has"
                 android:layout_marginLeft="10dp"
-                android:layout_toRightOf="@+id/family_image"
+                android:layout_toRightOf="@+id/baseline_image"
                 android:text="@string/view_cd4_results"
                 android:textColor="@android:color/darker_gray" />
 
@@ -300,6 +301,7 @@
             android:layout_below="@+id/notification_and_referral_row"
             android:background="@color/light_grey"
             android:visibility="gone" />
+
         <View
             android:id="@+id/view_last_visit_row"
             android:layout_width="match_parent"
@@ -307,6 +309,7 @@
             android:layout_below="@+id/rlLastVisit"
             android:background="@color/light_grey"
             android:visibility="gone" />
+
         <View
             android:id="@+id/view_next_visit_row"
             android:layout_width="match_parent"
@@ -314,6 +317,7 @@
             android:layout_below="@+id/rlNextVisit"
             android:background="@color/light_grey"
             android:visibility="gone" />
+
         <View
             android:id="@+id/view_positive_date_row"
             android:layout_width="match_parent"
@@ -321,6 +325,7 @@
             android:layout_below="@+id/rlUpcomingServices"
             android:background="@color/light_grey"
             android:visibility="gone" />
+
         <View
             android:id="@+id/view_most_due_overdue_row"
             android:layout_width="match_parent"
@@ -328,6 +333,7 @@
             android:layout_below="@+id/rlUpcomingServices"
             android:background="@color/light_grey"
             android:visibility="visible" />
+
         <View
             android:id="@+id/view_family_row"
             android:layout_width="match_parent"
@@ -335,6 +341,7 @@
             android:layout_below="@+id/rlFamilyServicesDue"
             android:background="@color/light_grey"
             android:visibility="gone" />
+
         <View
             android:id="@+id/view_hvl_results_row"
             android:layout_width="match_parent"
@@ -342,6 +349,7 @@
             android:layout_below="@+id/rlHvlResults"
             android:background="@color/light_grey"
             android:visibility="gone" />
+
         <View
             android:id="@+id/view_baseline_results_row"
             android:layout_width="match_parent"
