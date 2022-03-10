@@ -24,8 +24,9 @@ public class PmtctDao extends AbstractDao {
     }
 
     public static Date getPmtctFollowUpVisitDate(String baseEntityID) {
-        String sql = "select followup_visit_date from ec_pmtct_followup where base_entity_id ='" + baseEntityID + "'";
-
+        String sql = "SELECT followup_visit_date FROM ec_pmtct_followup WHERE entity_id = '" + baseEntityID + "'"
+                        + "ORDER BY visit_number DESC "
+                        + "LIMIT 1";
         DataMap<Date> dataMap = cursor -> getCursorValueAsDate(cursor, "followup_visit_date", getNativeFormsDateFormat());
 
         List<Date> res = readData(sql, dataMap);
