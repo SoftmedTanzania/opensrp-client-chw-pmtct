@@ -23,7 +23,6 @@ import org.smartregister.view.dialog.FilterOption;
 import org.smartregister.view.dialog.ServiceModeOption;
 import org.smartregister.view.dialog.SortOption;
 import org.smartregister.view.viewholder.OnClickFormLauncher;
-import org.w3c.dom.Text;
 
 import java.text.MessageFormat;
 import java.util.Set;
