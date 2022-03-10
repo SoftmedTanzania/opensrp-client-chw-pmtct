@@ -31,11 +31,19 @@ public class DBConstants {
         public static final String GEST_AGE = "gest_age";
         public static final String CHILD = "ec_child";
         public static final String FORM_SUBMISSION_ID = "form_submission_id";
+
         public static final String HVL_RESULT = "hvl_result";
         public static final String HVL_SAMPLE_ID = "hvl_sample_id";
         public static final String HVL_SAMPLE_COLLECTION_DATE = "hvl_collection_date";
         public static final String HVL_RESULT_DATE = "hvl_result_date";
-        public static final String PARENT_EVENT_FORM_ID = "parent_event_form_id";
+        public static final String HVL_FOLLOWUP_FORM_SUBMISSION_ID = "hvl_pmtct_followup_form_submission_id";
+
+        public static final String CD4_SAMPLE_ID = "cd4_sample_id";
+        public static final String CD4_RESULT = "cd4_result";
+        public static final String CD4_SAMPLE_COLLECTION_DATE = "cd4_collection_date";
+        public static final String CD4_RESULT_DATE = "cd4_result_date";
+        public static final String CD4_FOLLOWUP_FORM_SUBMISSION_ID = "cd4_pmtct_followup_form_submission_id";
+
 
     }
 }
