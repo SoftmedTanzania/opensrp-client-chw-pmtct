@@ -23,6 +23,7 @@ import org.smartregister.view.dialog.FilterOption;
 import org.smartregister.view.dialog.ServiceModeOption;
 import org.smartregister.view.dialog.SortOption;
 import org.smartregister.view.viewholder.OnClickFormLauncher;
+import org.w3c.dom.Text;
 
 import java.text.MessageFormat;
 import java.util.Set;
@@ -137,6 +138,7 @@ public class HvlResultsViewProvider implements RecyclerViewProvider<HvlResultsVi
         public TextView collectionDate;
         public TextView hvlResult;
         public RelativeLayout hvlWrapper;
+        public TextView resultTitle;
 
         public Button recordHvl;
         public View dueWrapper;
@@ -150,6 +152,7 @@ public class HvlResultsViewProvider implements RecyclerViewProvider<HvlResultsVi
             hvlWrapper = itemView.findViewById(R.id.rlHvlWrapper);
             recordHvl = itemView.findViewById(R.id.record_hvl_button);
             dueWrapper = itemView.findViewById(R.id.due_button_wrapper);
+            resultTitle = itemView.findViewById(R.id.hvl_result_title);
         }
     }
 
