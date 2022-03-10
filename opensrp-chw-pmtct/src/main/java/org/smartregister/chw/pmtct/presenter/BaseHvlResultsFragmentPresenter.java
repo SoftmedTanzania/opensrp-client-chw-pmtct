@@ -2,6 +2,7 @@ package org.smartregister.chw.pmtct.presenter;
 
 import org.smartregister.chw.pmtct.contract.HvlResultsFragmentContract;
 import org.smartregister.chw.pmtct.util.Constants;
+import org.smartregister.chw.pmtct.util.DBConstants;
 import org.smartregister.configurableviews.model.RegisterConfiguration;
 import org.smartregister.configurableviews.model.View;
 
@@ -29,7 +30,7 @@ public class BaseHvlResultsFragmentPresenter implements HvlResultsFragmentContra
 
     @Override
     public String getMainCondition() {
-        return "";
+        return " " + Constants.TABLES.PMTCT_FOLLOW_UP + "." + DBConstants.KEY.HVL_SAMPLE_ID + " IS NOT NULL ";
     }
 
     @Override
@@ -39,7 +40,7 @@ public class BaseHvlResultsFragmentPresenter implements HvlResultsFragmentContra
 
     @Override
     public String getMainTable() {
-        return Constants.TABLES.PMTCT_HVL_RESULTS;
+        return Constants.TABLES.PMTCT_FOLLOW_UP;
     }
 
     @Override
