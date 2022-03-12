@@ -66,5 +66,6 @@
     <string name="collection_date">Collection Date</string>
     <string name="record_hvl">Record HVL</string>
     <string name="hvl">HVL</string>
+    <string name="record_eac">Record EAC Visit</string>
 
 </resources>

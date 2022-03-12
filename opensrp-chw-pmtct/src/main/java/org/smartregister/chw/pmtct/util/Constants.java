@@ -26,6 +26,7 @@ public interface Constants {
         String PMTCT_FOLLOW_UP = "ec_pmtct_followup";
         String PMTCT_HVL_RESULTS = "ec_pmtct_hvl_results";
         String PMTCT_CD4_RESULTS = "ec_pmtct_cd4_results";
+        String PMTCT_EAC_VISITS = "ec_pmtct_eac_visit";
     }
 
     interface ACTIVITY_PAYLOAD {

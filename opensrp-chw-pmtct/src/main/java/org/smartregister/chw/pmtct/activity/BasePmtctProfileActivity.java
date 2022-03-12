@@ -49,6 +49,7 @@ public class BasePmtctProfileActivity extends BaseProfileActivity implements Pmt
     protected TextView textViewLocation;
     protected TextView textViewUniqueID;
     protected TextView textViewRecordPmtct;
+    protected TextView textViewRecordEac;
     protected TextView textViewRecordAnc;
     protected TextView textViewNextVisit;
     protected View view_last_visit_row;
@@ -129,6 +130,7 @@ public class BasePmtctProfileActivity extends BaseProfileActivity implements Pmt
         textViewRecordAncNotDone = findViewById(R.id.textview_record_anc_not_done);
         textViewVisitDoneEdit = findViewById(R.id.textview_edit);
         textViewRecordPmtct = findViewById(R.id.textview_record_pmtct);
+        textViewRecordEac = findViewById(R.id.textview_record_eac);
         textViewRecordAnc = findViewById(R.id.textview_record_anc);
         textViewUndo = findViewById(R.id.textview_undo);
         imageView = findViewById(R.id.imageview_profile);
