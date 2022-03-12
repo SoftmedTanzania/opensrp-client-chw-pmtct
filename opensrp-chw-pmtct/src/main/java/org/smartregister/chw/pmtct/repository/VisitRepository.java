@@ -194,6 +194,24 @@ public class VisitRepository extends BaseRepository {
         return visits;
     }
 
+    public List<Visit> getAllUnSynced() {
+        List<Visit> visits = new ArrayList<>();
+        Cursor cursor = null;
+        try {
+            cursor = getReadableDatabase().query(VISIT_TABLE, VISIT_COLUMNS, PROCESSED + " = ? ", new String[]{"0"}, null, null, CREATED_AT + " ASC ", null);
+            visits = readVisits(cursor);
+        } catch (Exception e) {
+            Timber.e(e);
+        } finally {
+            if (cursor != null) {
+                cursor.close();
+            }
+        }
+        return visits;
+    }
+
+
+
     public List<Visit> getAllUnSynced(Long last_edit_time, String baseEntityID) {
         List<Visit> visits = new ArrayList<>();
         Cursor cursor = null;
