@@ -221,7 +221,7 @@
                 android:src="@drawable/row_goto" />
 
             <org.smartregister.view.customcontrols.CustomFontTextView
-                android:id="@+id/textview_family_has"
+                android:id="@+id/textview_hvl_results"
                 style="@style/CustomFontTextViewStyle.ListView.Normal.MultipleLines"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -232,11 +232,11 @@
                 android:textColor="@android:color/black" />
 
             <org.smartregister.view.customcontrols.CustomFontTextView
-                android:id="@+id/text_view_family_profile"
+                android:id="@+id/tv_view_hvl_results"
                 style="@style/CustomFontTextViewStyle.ListView.Normal.MultipleLines"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/textview_family_has"
+                android:layout_below="@+id/textview_hvl_results"
                 android:layout_marginLeft="10dp"
                 android:layout_toRightOf="@+id/hvl_image"
                 android:text="@string/view_hvl_results"
@@ -271,7 +271,7 @@
                 android:src="@drawable/row_goto" />
 
             <org.smartregister.view.customcontrols.CustomFontTextView
-                android:id="@+id/textview_family_has"
+                android:id="@+id/textview_baseline_results"
                 style="@style/CustomFontTextViewStyle.ListView.Normal.MultipleLines"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -282,11 +282,11 @@
                 android:textColor="@android:color/black" />
 
             <org.smartregister.view.customcontrols.CustomFontTextView
-                android:id="@+id/text_view_family_profile"
+                android:id="@+id/tv_view_baseline_results"
                 style="@style/CustomFontTextViewStyle.ListView.Normal.MultipleLines"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/textview_family_has"
+                android:layout_below="@+id/textview_baseline_results"
                 android:layout_marginLeft="10dp"
                 android:layout_toRightOf="@+id/baseline_image"
                 android:text="@string/view_cd4_results"
