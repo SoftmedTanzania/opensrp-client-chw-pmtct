@@ -50,4 +50,9 @@ public interface Constants {
         String PMTCT_REGISTRATION = "pmtct_registration";
     }
 
+    public class RISK_LEVELS {
+        public static final String RISK_HIGH = "high_risk";
+        public static final String RISK_MEDIUM = "medium_risk";
+        public static final String RISK_LOW = "low_risk";
+    }
 }

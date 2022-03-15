@@ -67,5 +67,8 @@
     <string name="record_hvl">Record HVL</string>
     <string name="hvl">HVL</string>
     <string name="record_eac">Record EAC Visit</string>
+    <string name="low_risk">Low Risk</string>
+    <string name="medium_risk">Medium Risk</string>
+    <string name="high_risk">High Risk</string>
 
 </resources>

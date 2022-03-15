@@ -54,6 +54,7 @@ public class BasePmtctProfileActivity extends BaseProfileActivity implements Pmt
     protected TextView textViewNextVisit;
     protected View view_last_visit_row;
     protected View view_most_due_overdue_row;
+    protected TextView riskLabel;
     protected View view_family_row;
     protected View view_positive_date_row;
     protected View view_hvl_results_row;
@@ -117,6 +118,8 @@ public class BasePmtctProfileActivity extends BaseProfileActivity implements Pmt
         tvUpComingServices = findViewById(R.id.textview_name_due);
         tvFamilyStatus = findViewById(R.id.textview_family_has);
         textViewNextVisit = findViewById(R.id.tv_next_visit);
+
+        riskLabel = findViewById(R.id.risk_label);
 
         rlLastVisit = findViewById(R.id.rlLastVisit);
         rlNextVisit = findViewById(R.id.rlNextVisit);
@@ -258,6 +261,40 @@ public class BasePmtctProfileActivity extends BaseProfileActivity implements Pmt
         }
         if (StringUtils.isNotBlank(memberObject.getPrimaryCareGiver()) && memberObject.getPrimaryCareGiver().equals(memberObject.getBaseEntityId())) {
             findViewById(R.id.primary_malaria_caregiver).setVisibility(View.VISIBLE);
+        }
+    }
+
+    public void showRiskLabel(String riskLevel) {
+        if (riskLabel != null && StringUtils.isNotBlank(riskLevel)) {
+            int labelTextColor;
+            int background;
+            String labelText;
+            switch (riskLevel) {
+                case Constants.RISK_LEVELS.RISK_LOW:
+                    labelTextColor = context().getColorResource(R.color.low_risk_text_green);
+                    background = R.drawable.low_risk_label;
+                    labelText = getString(R.string.low_risk);
+                    break;
+                case Constants.RISK_LEVELS.RISK_MEDIUM:
+                    labelTextColor = context().getColorResource(R.color.medium_risk_text_orange);
+                    background = R.drawable.medium_risk_label;
+                    labelText = getString(R.string.medium_risk);
+                    break;
+                case Constants.RISK_LEVELS.RISK_HIGH:
+                    labelTextColor = context().getColorResource(R.color.high_risk_text_red);
+                    background = R.drawable.high_risk_label;
+                    labelText = getString(R.string.high_risk);
+                    break;
+                default:
+                    labelTextColor = context().getColorResource(R.color.default_risk_text_black);
+                    background = R.drawable.risk_label;
+                    labelText = getString(R.string.low_risk);
+                    break;
+            }
+            riskLabel.setVisibility(View.VISIBLE);
+            riskLabel.setText(labelText);
+            riskLabel.setTextColor(labelTextColor);
+            riskLabel.setBackgroundResource(background);
         }
     }
 
