@@ -19,6 +19,7 @@ public class MemberObject implements Serializable {
     private String gender;
     private String uniqueId;
     private String age;
+    private String dod;
     private String relationalid;
     private String details;
     private String baseEntityId;
@@ -242,5 +243,13 @@ public class MemberObject implements Serializable {
 
     public void setPncMember(String pncMember) {
         this.pncMember = pncMember;
+    }
+
+    public String getDod() {
+        return dod;
+    }
+
+    public void setDod(String dod) {
+        this.dod = dod;
     }
 }

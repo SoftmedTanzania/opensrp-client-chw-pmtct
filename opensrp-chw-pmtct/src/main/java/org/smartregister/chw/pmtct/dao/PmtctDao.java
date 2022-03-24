@@ -24,9 +24,9 @@ public class PmtctDao extends AbstractDao {
     }
 
     public static Date getPmtctFollowUpVisitDate(String baseEntityID) {
-        String sql = "SELECT followup_visit_date FROM ec_pmtct_followup WHERE entity_id = '" + baseEntityID + "'"
-                        + "ORDER BY visit_number DESC "
-                        + "LIMIT 1";
+        String sql = "SELECT followup_visit_date FROM ec_pmtct_followup WHERE followup_status <> 'lost_to_followup' AND entity_id = '" + baseEntityID + "'"
+                + "ORDER BY visit_number DESC "
+                + "LIMIT 1";
         DataMap<Date> dataMap = cursor -> getCursorValueAsDate(cursor, "followup_visit_date", getNativeFormsDateFormat());
 
         List<Date> res = readData(sql, dataMap);
@@ -63,6 +63,7 @@ public class PmtctDao extends AbstractDao {
             memberObject.setGender(getCursorValue(cursor, "gender"));
             memberObject.setUniqueId(getCursorValue(cursor, "unique_id", ""));
             memberObject.setAge(getCursorValue(cursor, "dob"));
+            memberObject.setDod(getCursorValue(cursor, "dod", null));
             memberObject.setFamilyBaseEntityId(getCursorValue(cursor, "relational_id", ""));
             memberObject.setRelationalId(getCursorValue(cursor, "relational_id", ""));
             memberObject.setPrimaryCareGiver(getCursorValue(cursor, "primary_caregiver"));

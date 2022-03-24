@@ -60,7 +60,7 @@ public class PmtctRegisterProvider implements RecyclerViewProvider<PmtctRegister
         }
     }
 
-    private String updateMemberGender(CommonPersonObjectClient commonPersonObjectClient) {
+    protected String updateMemberGender(CommonPersonObjectClient commonPersonObjectClient) {
         if ("0".equals(Utils.getValue(commonPersonObjectClient.getColumnmaps(), DBConstants.KEY.IS_ANC_CLOSED, false))) {
             return context.getResources().getString(R.string.anc_string);
         } else if ("0".equals(Utils.getValue(commonPersonObjectClient.getColumnmaps(), DBConstants.KEY.IS_PNC_CLOSED, false))) {
@@ -72,7 +72,7 @@ public class PmtctRegisterProvider implements RecyclerViewProvider<PmtctRegister
     }
 
     @SuppressLint("SetTextI18n")
-    private void populatePatientColumn(CommonPersonObjectClient pc, final RegisterViewHolder viewHolder) {
+    protected void populatePatientColumn(CommonPersonObjectClient pc, final RegisterViewHolder viewHolder) {
         try {
 
             String firstName = getName(
