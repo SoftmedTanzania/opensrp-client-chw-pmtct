@@ -77,18 +77,16 @@
                         style="@style/CustomFontTextViewStyle.ListView.Normal.MultipleLines"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginEnd="65dp"
-                        android:layout_weight="1"
                         android:background="@drawable/risk_label"
-                        android:paddingStart="15dp"
+                        android:paddingStart="8dp"
                         android:paddingTop="6dp"
-                        android:paddingEnd="15dp"
+                        android:paddingEnd="8dp"
                         android:layout_toRightOf="@id/imageview_profile"
                         android:paddingBottom="6dp"
                         tools:text="Low Risk"
                         android:visibility="gone"
                         android:textColor="@color/default_risk_text_black"
-                        android:textSize="14sp"
+                        android:textSize="13sp"
                         tools:visibility="visible" />
                     </RelativeLayout>
 
