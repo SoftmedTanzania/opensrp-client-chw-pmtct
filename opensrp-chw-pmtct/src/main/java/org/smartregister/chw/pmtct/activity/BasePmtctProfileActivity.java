@@ -48,6 +48,7 @@ public class BasePmtctProfileActivity extends BaseProfileActivity implements Pmt
     protected TextView textViewGender;
     protected TextView textViewLocation;
     protected TextView textViewUniqueID;
+    protected TextView textViewClientRegNumber;
     protected TextView textViewRecordPmtct;
     protected TextView textViewRecordEac;
     protected TextView textViewRecordAnc;
@@ -118,6 +119,7 @@ public class BasePmtctProfileActivity extends BaseProfileActivity implements Pmt
         tvUpComingServices = findViewById(R.id.textview_name_due);
         tvFamilyStatus = findViewById(R.id.textview_family_has);
         textViewNextVisit = findViewById(R.id.tv_next_visit);
+        textViewClientRegNumber = findViewById(R.id.client_reg_number);
 
         riskLabel = findViewById(R.id.risk_label);
 
