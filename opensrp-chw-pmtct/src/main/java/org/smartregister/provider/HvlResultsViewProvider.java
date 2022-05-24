@@ -35,7 +35,7 @@ public class HvlResultsViewProvider implements RecyclerViewProvider<HvlResultsVi
     private final LayoutInflater inflater;
     protected View.OnClickListener onClickListener;
     private View.OnClickListener paginationClickListener;
-    private Context context;
+    protected Context context;
     private Set<org.smartregister.configurableviews.model.View> visibleColumns;
 
     public HvlResultsViewProvider(Context context, View.OnClickListener paginationClickListener, View.OnClickListener onClickListener, Set visibleColumns) {
