@@ -47,7 +47,7 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="8dp"
             android:layout_marginBottom="10dp"
             android:orientation="horizontal">
 
@@ -65,7 +65,6 @@
                 android:layout_marginLeft="@dimen/register_dot_separator_margin"
                 android:layout_marginRight="@dimen/register_dot_separator_margin"
                 android:text="@string/interpunct"
-                android:textSize="18sp"
                 android:textColor="@color/primary" />
 
             <TextView
