@@ -21,7 +21,7 @@
     <string name="family_has_nothing_due">Family has nothing due</string>
     <string name="go_to_family_s_profile">Go to family\'s profile</string>
     <string name="family_has_services_due">Family has services due</string>
-    <string name="primary_care_giver">PRIMARY CARE GIVER</string>
+    <string name="primary_care_giver">PRIMARY CAREGIVER</string>
     <string name="family_head">FAMILY HEAD</string>
     <string name="family_has_service_overdue"><![CDATA[Family has <font color=#FF0000>services overdue</font></b>]]></string>
     <string name="vaccine_service_upcoming"><![CDATA[%1$s <font color=#7f7f7f>upcoming (%2$s)</font></b>]]></string>
@@ -53,7 +53,7 @@
     <string name="pmtct">PMTCT</string>
     <string name="register_pmtct">Register Pmtct</string>
     <string name="record_pmtct">Record PMTCT Followup</string>
-    <string name="return_to_pmtct_clients">Return to all Pmtct Clients</string>
+    <string name="return_to_pmtct_clients">Return to Pmtct Clients List</string>
     <string name="next_visit_date">Next Due in %s</string>
     <string name="error_unable_save_home_visit">unable to save home visit</string>
     <string name="optional">optional</string>
