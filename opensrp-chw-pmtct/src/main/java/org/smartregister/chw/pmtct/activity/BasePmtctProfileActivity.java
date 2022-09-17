@@ -259,13 +259,6 @@ public class BasePmtctProfileActivity extends BaseProfileActivity implements Pmt
         textViewGender.setText(PmtctUtil.getGenderTranslated(this, memberObject.getGender()));
         textViewLocation.setText(memberObject.getAddress());
         textViewUniqueID.setText(memberObject.getUniqueId());
-
-        if (StringUtils.isNotBlank(memberObject.getFamilyHead()) && memberObject.getFamilyHead().equals(memberObject.getBaseEntityId())) {
-            findViewById(R.id.family_malaria_head).setVisibility(View.VISIBLE);
-        }
-        if (StringUtils.isNotBlank(memberObject.getPrimaryCareGiver()) && memberObject.getPrimaryCareGiver().equals(memberObject.getBaseEntityId())) {
-            findViewById(R.id.primary_malaria_caregiver).setVisibility(View.VISIBLE);
-        }
     }
 
     public void showRiskLabel(String riskLevel) {
