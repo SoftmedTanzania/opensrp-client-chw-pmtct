@@ -45,6 +45,7 @@ public class BasePmtctProfileActivity extends BaseProfileActivity implements Pmt
     protected PmtctProfileContract.Presenter profilePresenter;
     protected CircleImageView imageView;
     protected TextView textViewName;
+    protected TextView textViewMotherName;
     protected TextView textViewGender;
     protected TextView textViewLocation;
     protected TextView textViewUniqueID;
@@ -108,6 +109,7 @@ public class BasePmtctProfileActivity extends BaseProfileActivity implements Pmt
         }
 
         textViewName = findViewById(R.id.textview_name);
+        textViewMotherName = findViewById(R.id.textview_name_mother);
         textViewGender = findViewById(R.id.textview_gender);
         textViewLocation = findViewById(R.id.textview_address);
         textViewUniqueID = findViewById(R.id.textview_id);

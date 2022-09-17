@@ -90,18 +90,37 @@
                             tools:visibility="visible" />
                     </RelativeLayout>
 
-                    <TextView
-                        android:id="@+id/textview_name"
-                        android:fontFamily="@font/google_sans_bold"
+                    <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
-                        android:layout_marginTop="5dp"
-                        android:paddingStart="0dp"
-                        android:paddingEnd="0dp"
-                        android:text="Patient Name, Age"
-                        android:textColor="@android:color/black"
-                        android:textSize="@dimen/call_widget_font3" />
+                        android:orientation="vertical">
+                        <TextView
+                            android:id="@+id/textview_name"
+                            android:fontFamily="@font/google_sans_bold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="5dp"
+                            android:paddingStart="0dp"
+                            android:paddingEnd="0dp"
+                            android:text="Patient Name, Age"
+                            android:textColor="@android:color/black"
+                            android:textSize="@dimen/call_widget_font3" />
+                        <TextView
+                            android:id="@+id/textview_name_mother"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="5dp"
+                            android:fontFamily="@font/google_sans_regular"
+                            android:paddingStart="0dp"
+                            android:paddingEnd="0dp"
+                            android:text="Mother Name, Age"
+                            android:visibility="gone"
+                            tools:visibility="visible"
+                            android:textColor="@color/visit_status_ok"
+                            android:textSize="@dimen/call_widget_font3" />
+                    </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="wrap_content"
