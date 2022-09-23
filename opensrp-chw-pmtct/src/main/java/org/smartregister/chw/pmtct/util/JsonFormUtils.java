@@ -1,5 +1,7 @@
 package org.smartregister.chw.pmtct.util;
 
+import static org.smartregister.chw.pmtct.util.Constants.ENCOUNTER_TYPE;
+
 import com.vijay.jsonwizard.constants.JsonFormConstants;
 
 import org.apache.commons.lang3.StringUtils;
@@ -16,13 +18,12 @@ import org.smartregister.repository.AllSharedPreferences;
 
 import java.text.MessageFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import timber.log.Timber;
-
-import static org.smartregister.chw.pmtct.util.Constants.ENCOUNTER_TYPE;
 
 
 public class JsonFormUtils extends org.smartregister.util.JsonFormUtils {
@@ -312,16 +313,27 @@ public class JsonFormUtils extends org.smartregister.util.JsonFormUtils {
             int x = options.length() - 1;
             while (x >= 0) {
                 JSONObject object = options.getJSONObject(x);
-                valueMap.put(object.getString(JsonFormConstants.TEXT), new NameID(object.getString(JsonFormConstants.KEY), x));
+                valueMap.put(object.getString(JsonFormConstants.KEY), new NameID(object.getString(JsonFormConstants.KEY), x));
                 x--;
             }
 
             for (VisitDetail d : visitDetails) {
                 String val = getValue(d);
-                NameID nid = valueMap.get(val);
-                if (nid != null) {
-                    values.put(nid.name);
-                    options.getJSONObject(nid.position).put(JsonFormConstants.VALUE, true);
+                List<String> checkedList = new ArrayList<>(Arrays.asList(val.split(", ")));
+                if (checkedList.size() > 1) {
+                    for (String item : checkedList) {
+                        NameID nid = valueMap.get(item);
+                        if (nid != null) {
+                            values.put(nid.name);
+                            options.getJSONObject(nid.position).put(JsonFormConstants.VALUE, true);
+                        }
+                    }
+                } else {
+                    NameID nid = valueMap.get(val);
+                    if (nid != null) {
+                        values.put(nid.name);
+                        options.getJSONObject(nid.position).put(JsonFormConstants.VALUE, true);
+                    }
                 }
             }
         } else {
