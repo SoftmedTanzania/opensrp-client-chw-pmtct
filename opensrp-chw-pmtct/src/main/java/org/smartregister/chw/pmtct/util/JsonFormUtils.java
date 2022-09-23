@@ -1,5 +1,7 @@
 package org.smartregister.chw.pmtct.util;
 
+import static org.smartregister.chw.pmtct.util.Constants.ENCOUNTER_TYPE;
+
 import com.vijay.jsonwizard.constants.JsonFormConstants;
 
 import org.apache.commons.lang3.StringUtils;
@@ -22,8 +24,6 @@ import java.util.List;
 import java.util.Map;
 
 import timber.log.Timber;
-
-import static org.smartregister.chw.pmtct.util.Constants.ENCOUNTER_TYPE;
 
 
 public class JsonFormUtils extends org.smartregister.util.JsonFormUtils {
