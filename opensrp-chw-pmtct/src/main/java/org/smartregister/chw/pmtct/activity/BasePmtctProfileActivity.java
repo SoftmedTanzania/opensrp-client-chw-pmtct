@@ -164,11 +164,11 @@ public class BasePmtctProfileActivity extends BaseProfileActivity implements Pmt
         initializePresenter();
         profilePresenter.fillProfileData(memberObject);
         setupViews();
+        initializeFloatingMenu();
     }
 
     @Override
     protected void setupViews() {
-        initializeFloatingMenu();
         recordAnc(memberObject);
         recordPnc(memberObject);
     }
