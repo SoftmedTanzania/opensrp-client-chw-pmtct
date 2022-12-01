@@ -3,6 +3,8 @@ package org.smartregister.chw.pmtct.interactor;
 
 import android.content.Context;
 
+import androidx.annotation.VisibleForTesting;
+
 import com.google.gson.Gson;
 
 import org.apache.commons.lang3.StringUtils;
@@ -36,7 +38,6 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
-import androidx.annotation.VisibleForTesting;
 import timber.log.Timber;
 
 
@@ -225,6 +226,10 @@ public class BasePmtctHomeVisitInteractor implements BasePmtctHomeVisitContract.
 
             // reset database
             if (editMode) {
+                Visit visit = visitRepository().getVisitByVisitId(visitID);
+                if (visit != null)
+                    baseEvent.setEventDate(visit.getDate());
+
                 deleteProcessedVisit(visitID, memberID);
                 deleteOldVisit(visitID);
             }
