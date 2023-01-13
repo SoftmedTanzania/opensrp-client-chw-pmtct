@@ -10,9 +10,12 @@ import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import androidx.recyclerview.widget.RecyclerView;
+
 import org.apache.commons.lang3.StringUtils;
 import org.smartregister.chw.pmtct.fragment.BaseHvlResultsFragment;
 import org.smartregister.chw.pmtct.util.DBConstants;
+import org.smartregister.chw.pmtct.util.NCUtils;
 import org.smartregister.commonregistry.CommonPersonObjectClient;
 import org.smartregister.cursoradapter.RecyclerViewProvider;
 import org.smartregister.pmtct.R;
@@ -25,9 +28,11 @@ import org.smartregister.view.dialog.SortOption;
 import org.smartregister.view.viewholder.OnClickFormLauncher;
 
 import java.text.MessageFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
 import java.util.Set;
 
-import androidx.recyclerview.widget.RecyclerView;
 import timber.log.Timber;
 
 public class HvlResultsViewProvider implements RecyclerViewProvider<HvlResultsViewProvider.RegisterViewHolder> {
@@ -62,6 +67,11 @@ public class HvlResultsViewProvider implements RecyclerViewProvider<HvlResultsVi
             String sampleId = Utils.getValue(pc.getColumnmaps(), DBConstants.KEY.HVL_SAMPLE_ID, false);
             String collectionDate = Utils.getValue(pc.getColumnmaps(), DBConstants.KEY.HVL_SAMPLE_COLLECTION_DATE, false);
             String hvlResult = Utils.getValue(pc.getColumnmaps(), DBConstants.KEY.HVL_RESULT, false);
+            String hvlResultDateString = Utils.getValue(pc.getColumnmaps(), DBConstants.KEY.HVL_RESULT_DATE, false);
+            Date hvlResultDate = null;
+            if (StringUtils.isNotBlank(hvlResultDateString)) {
+                hvlResultDate = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).parse(hvlResultDateString);
+            }
 
             if (StringUtils.isBlank(hvlResult)) {
                 viewHolder.hvlWrapper.setVisibility(View.GONE);
@@ -70,6 +80,11 @@ public class HvlResultsViewProvider implements RecyclerViewProvider<HvlResultsVi
                 viewHolder.hvlResult.setText(hvlResult);
                 viewHolder.hvlWrapper.setVisibility(View.VISIBLE);
                 viewHolder.dueWrapper.setVisibility(View.GONE);
+
+                if (hvlResultDate != null && NCUtils.getElapsedDays(hvlResultDate) < 30) {
+                    viewHolder.dueWrapper.setVisibility(View.VISIBLE);
+                    viewHolder.recordHvl.setText(R.string.edit);
+                }
             }
 
             viewHolder.sampleId.setText(sampleId);
