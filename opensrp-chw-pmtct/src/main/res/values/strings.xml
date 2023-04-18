@@ -71,5 +71,6 @@
     <string name="low_risk">Low Risk</string>
     <string name="medium_risk">Medium Risk</string>
     <string name="high_risk">High Risk</string>
+    <string name="process_visit">Process Visit</string>
 
 </resources>
