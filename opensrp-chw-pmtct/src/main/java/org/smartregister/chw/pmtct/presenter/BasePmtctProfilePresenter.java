@@ -1,7 +1,8 @@
 package org.smartregister.chw.pmtct.presenter;
 
 import android.content.Context;
-import android.support.annotation.Nullable;
+
+import androidx.annotation.Nullable;
 
 import org.smartregister.chw.pmtct.contract.PmtctProfileContract;
 import org.smartregister.chw.pmtct.domain.MemberObject;
@@ -46,27 +47,27 @@ public class BasePmtctProfilePresenter implements PmtctProfileContract.Presenter
 
     @Override
     public void visitRow(String visitState) {
-        if(getView() == null){
+        if (getView() == null) {
             return;
         }
 
-        if(("VISIT_DONE").equalsIgnoreCase(visitState)){
+        if (("VISIT_DONE").equalsIgnoreCase(visitState)) {
             getView().showDone();
-        }else{
+        } else {
             getView().hideDone();
         }
     }
 
     @Override
-    public void nextRow(String visitState,String visitDue) {
-        if(getView() == null){
+    public void nextRow(String visitState, String visitDue) {
+        if (getView() == null) {
             return;
         }
 
-        if(("NOT_DUE_YET").equalsIgnoreCase(visitState)){
+        if (("NOT_DUE_YET").equalsIgnoreCase(visitState)) {
             getView().showNextDue();
             getView().setDueDays(visitDue);
-        }else {
+        } else {
             getView().hideNextDue();
         }
 

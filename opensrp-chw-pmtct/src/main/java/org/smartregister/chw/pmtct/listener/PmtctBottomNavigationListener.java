@@ -1,8 +1,9 @@
 package org.smartregister.chw.pmtct.listener;
 
 import android.app.Activity;
-import android.support.annotation.NonNull;
 import android.view.MenuItem;
+
+import androidx.annotation.NonNull;
 
 import org.smartregister.listener.BottomNavigationListener;
 import org.smartregister.pmtct.R;
@@ -25,9 +26,7 @@ public class PmtctBottomNavigationListener extends BottomNavigationListener {
         if (item.getItemId() == R.id.action_family) {
             baseRegisterActivity.switchToBaseFragment();
         }
-//        else if (item.getItemId() == R.id.action_scan_qr) {
-//            baseRegisterActivity.startQrCodeScanner();
-//        }
+
 
         return true;
     }

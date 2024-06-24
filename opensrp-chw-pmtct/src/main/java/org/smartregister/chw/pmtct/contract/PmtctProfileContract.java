@@ -19,6 +19,10 @@ public interface PmtctProfileContract {
 
         void openFamilyDueServices();
 
+        void openHvlResultsHistory();
+
+        void openBaselineInvestigationResults();
+
         void showProgressBar(boolean status);
 
         void recordAnc(MemberObject memberObject);
@@ -29,13 +33,13 @@ public interface PmtctProfileContract {
 
         void showDone();
 
-       void hideDone();
+        void hideDone();
 
-       void showNextDue();
+        void showNextDue();
 
-       void hideNextDue();
+        void hideNextDue();
 
-       void setDueDays(String dueDays);
+        void setDueDays(String dueDays);
     }
 
     interface Presenter {
@@ -53,7 +57,7 @@ public interface PmtctProfileContract {
 
         void visitRow(String visitState);
 
-        void nextRow(String visitState,String visitDue);
+        void nextRow(String visitState, String visitDue);
     }
 
     interface Interactor {

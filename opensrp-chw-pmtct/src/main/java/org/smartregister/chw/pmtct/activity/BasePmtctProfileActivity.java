@@ -6,10 +6,6 @@ import android.content.Intent;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
-import android.support.annotation.Nullable;
-import android.support.v4.view.ViewPager;
-import android.support.v7.app.ActionBar;
-import android.support.v7.widget.Toolbar;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.ImageView;
@@ -19,8 +15,6 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import org.apache.commons.lang3.StringUtils;
-import org.joda.time.DateTime;
-import org.joda.time.Period;
 import org.smartregister.chw.pmtct.contract.PmtctProfileContract;
 import org.smartregister.chw.pmtct.custom_views.BasePmtctFloatingMenu;
 import org.smartregister.chw.pmtct.dao.PmtctDao;
@@ -38,6 +32,10 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.widget.Toolbar;
+import androidx.viewpager.widget.ViewPager;
 import de.hdodenhof.circleimageview.CircleImageView;
 import timber.log.Timber;
 
@@ -47,36 +45,41 @@ public class BasePmtctProfileActivity extends BaseProfileActivity implements Pmt
     protected PmtctProfileContract.Presenter profilePresenter;
     protected CircleImageView imageView;
     protected TextView textViewName;
+    protected TextView textViewMotherName;
     protected TextView textViewGender;
     protected TextView textViewLocation;
     protected TextView textViewUniqueID;
+    protected TextView textViewClientRegNumber;
     protected TextView textViewRecordPmtct;
+    protected TextView textViewRecordEac;
     protected TextView textViewRecordAnc;
     protected TextView textViewNextVisit;
-   // protected TextView textview_positive_date;
     protected View view_last_visit_row;
     protected View view_most_due_overdue_row;
+    protected TextView riskLabel;
     protected View view_family_row;
     protected View view_positive_date_row;
+    protected View view_hvl_results_row;
+    protected View view_baseline_results_row;
     protected RelativeLayout rlLastVisit;
     protected RelativeLayout rlNextVisit;
     protected RelativeLayout rlUpcomingServices;
     protected RelativeLayout rlFamilyServicesDue;
     protected RelativeLayout visitStatus;
+    protected RelativeLayout rlHvlResults;
+    protected RelativeLayout rlBaselineResults;
     protected ImageView imageViewCross;
     protected TextView textViewUndo;
-   // protected RelativeLayout rlMalariaPositiveDate;
-    private TextView tvUpComingServices;
-    private TextView tvFamilyStatus;
-    private SimpleDateFormat dateFormat = new SimpleDateFormat("dd MMM", Locale.getDefault());
     protected TextView textViewVisitDone;
     protected RelativeLayout visitDone;
     protected LinearLayout recordVisits;
     protected TextView textViewVisitDoneEdit;
     protected TextView textViewRecordAncNotDone;
-
-    private ProgressBar progressBar;
     protected BasePmtctFloatingMenu basePmtctFloatingMenu;
+    private TextView tvUpComingServices;
+    private TextView tvFamilyStatus;
+    private SimpleDateFormat dateFormat = new SimpleDateFormat("dd MMM", Locale.getDefault());
+    private ProgressBar progressBar;
 
     public static void startProfileActivity(Activity activity, String baseEntityId) {
         Intent intent = new Intent(activity, BasePmtctProfileActivity.class);
@@ -106,6 +109,7 @@ public class BasePmtctProfileActivity extends BaseProfileActivity implements Pmt
         }
 
         textViewName = findViewById(R.id.textview_name);
+        textViewMotherName = findViewById(R.id.textview_name_mother);
         textViewGender = findViewById(R.id.textview_gender);
         textViewLocation = findViewById(R.id.textview_address);
         textViewUniqueID = findViewById(R.id.textview_id);
@@ -116,14 +120,15 @@ public class BasePmtctProfileActivity extends BaseProfileActivity implements Pmt
         imageViewCross = findViewById(R.id.tick_image);
         tvUpComingServices = findViewById(R.id.textview_name_due);
         tvFamilyStatus = findViewById(R.id.textview_family_has);
-        //textview_positive_date = findViewById(R.id.textview_positive_date);
         textViewNextVisit = findViewById(R.id.tv_next_visit);
+        textViewClientRegNumber = findViewById(R.id.client_reg_number);
+
+        riskLabel = findViewById(R.id.risk_label);
 
         rlLastVisit = findViewById(R.id.rlLastVisit);
         rlNextVisit = findViewById(R.id.rlNextVisit);
         rlUpcomingServices = findViewById(R.id.rlUpcomingServices);
         rlFamilyServicesDue = findViewById(R.id.rlFamilyServicesDue);
-        //rlMalariaPositiveDate = findViewById(R.id.rlMalariaPositiveDate);
         textViewVisitDone = findViewById(R.id.textview_visit_done);
         visitStatus = findViewById(R.id.record_visit_not_done_bar);
         visitDone = findViewById(R.id.visit_done_bar);
@@ -132,19 +137,24 @@ public class BasePmtctProfileActivity extends BaseProfileActivity implements Pmt
         textViewRecordAncNotDone = findViewById(R.id.textview_record_anc_not_done);
         textViewVisitDoneEdit = findViewById(R.id.textview_edit);
         textViewRecordPmtct = findViewById(R.id.textview_record_pmtct);
+        textViewRecordEac = findViewById(R.id.textview_record_eac);
         textViewRecordAnc = findViewById(R.id.textview_record_anc);
         textViewUndo = findViewById(R.id.textview_undo);
         imageView = findViewById(R.id.imageview_profile);
-
+        view_hvl_results_row = findViewById(R.id.view_hvl_results_row);
+        view_baseline_results_row = findViewById(R.id.view_baseline_results_row);
+        rlBaselineResults = findViewById(R.id.rlBaselineInvestigationResults);
+        rlHvlResults = findViewById(R.id.rlHvlResults);
 
         textViewVisitDoneEdit.setOnClickListener(this);
         textViewVisitDoneEdit.setVisibility(View.GONE);
 
         textViewRecordAncNotDone.setOnClickListener(this);
+        rlHvlResults.setOnClickListener(this);
+        rlBaselineResults.setOnClickListener(this);
         rlLastVisit.setOnClickListener(this);
         rlUpcomingServices.setOnClickListener(this);
         rlFamilyServicesDue.setOnClickListener(this);
-        //rlMalariaPositiveDate.setOnClickListener(this);
         textViewRecordPmtct.setOnClickListener(this);
         textViewRecordAnc.setOnClickListener(this);
         textViewUndo.setOnClickListener(this);
@@ -154,11 +164,11 @@ public class BasePmtctProfileActivity extends BaseProfileActivity implements Pmt
         initializePresenter();
         profilePresenter.fillProfileData(memberObject);
         setupViews();
+        initializeFloatingMenu();
     }
 
     @Override
     protected void setupViews() {
-        initializeFloatingMenu();
         recordAnc(memberObject);
         recordPnc(memberObject);
     }
@@ -184,6 +194,10 @@ public class BasePmtctProfileActivity extends BaseProfileActivity implements Pmt
             this.openUpcomingService();
         } else if (id == R.id.rlFamilyServicesDue) {
             this.openFamilyDueServices();
+        } else if (id == R.id.rlHvlResults) {
+            this.openHvlResultsHistory();
+        } else if (id == R.id.rlBaselineInvestigationResults) {
+            this.openBaselineInvestigationResults();
         }
     }
 
@@ -233,28 +247,52 @@ public class BasePmtctProfileActivity extends BaseProfileActivity implements Pmt
 
     @Override
     public void setDueDays(String dueDays) {
-        textViewNextVisit.setText(getString(R.string.next_visit_date,dueDays));
+        textViewNextVisit.setText(getString(R.string.next_visit_date, dueDays));
     }
 
     @SuppressLint("DefaultLocale")
     @Override
     public void setProfileViewWithData() {
-        int age = new Period(new DateTime(memberObject.getAge()), new DateTime()).getYears();
+        int age = memberObject.getAge();
         textViewName.setText(String.format("%s %s %s, %d", memberObject.getFirstName(),
                 memberObject.getMiddleName(), memberObject.getLastName(), age));
         textViewGender.setText(PmtctUtil.getGenderTranslated(this, memberObject.getGender()));
         textViewLocation.setText(memberObject.getAddress());
         textViewUniqueID.setText(memberObject.getUniqueId());
+    }
 
-        if (StringUtils.isNotBlank(memberObject.getFamilyHead()) && memberObject.getFamilyHead().equals(memberObject.getBaseEntityId())) {
-            findViewById(R.id.family_malaria_head).setVisibility(View.VISIBLE);
+    public void showRiskLabel(String riskLevel) {
+        if (riskLabel != null && StringUtils.isNotBlank(riskLevel)) {
+            int labelTextColor;
+            int background;
+            String labelText;
+            switch (riskLevel) {
+                case Constants.RISK_LEVELS.RISK_LOW:
+                    labelTextColor = context().getColorResource(R.color.low_risk_text_green);
+                    background = R.drawable.low_risk_label;
+                    labelText = getString(R.string.low_risk);
+                    break;
+                case Constants.RISK_LEVELS.RISK_MEDIUM:
+                    labelTextColor = context().getColorResource(R.color.medium_risk_text_orange);
+                    background = R.drawable.medium_risk_label;
+                    labelText = getString(R.string.medium_risk);
+                    break;
+                case Constants.RISK_LEVELS.RISK_HIGH:
+                    labelTextColor = context().getColorResource(R.color.high_risk_text_red);
+                    background = R.drawable.high_risk_label;
+                    labelText = getString(R.string.high_risk);
+                    break;
+                default:
+                    labelTextColor = context().getColorResource(R.color.default_risk_text_black);
+                    background = R.drawable.risk_label;
+                    labelText = getString(R.string.low_risk);
+                    break;
+            }
+            riskLabel.setVisibility(View.VISIBLE);
+            riskLabel.setText(labelText);
+            riskLabel.setTextColor(labelTextColor);
+            riskLabel.setBackgroundResource(background);
         }
-        if (StringUtils.isNotBlank(memberObject.getPrimaryCareGiver()) && memberObject.getPrimaryCareGiver().equals(memberObject.getBaseEntityId())) {
-            findViewById(R.id.primary_malaria_caregiver).setVisibility(View.VISIBLE);
-        }
-//        if (memberObject.getMalariaTestDate() != null) {
-//            textview_positive_date.setText(getString(R.string.malaria_positive) + " " + formatTime(memberObject.getMalariaTestDate()));
-//        }
     }
 
     @Override
@@ -336,6 +374,16 @@ public class BasePmtctProfileActivity extends BaseProfileActivity implements Pmt
         //implement
     }
 
+    @Override
+    public void openHvlResultsHistory() {
+        //implement
+    }
+
+    @Override
+    public void openBaselineInvestigationResults() {
+        //implement
+    }
+
     @Nullable
     private String formatTime(Date dateTime) {
         try {
@@ -349,6 +397,7 @@ public class BasePmtctProfileActivity extends BaseProfileActivity implements Pmt
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == Constants.REQUEST_CODE_GET_JSON && resultCode == RESULT_OK) {
             profilePresenter.saveForm(data.getStringExtra(Constants.JSON_FORM_EXTRA.JSON));
             finish();

@@ -34,50 +34,46 @@
             android:textSize="@dimen/register_list_title_size"
             android:visibility="gone" />
 
-        <org.smartregister.view.customcontrols.CustomFontTextView
+        <TextView
             android:id="@+id/patient_name_age"
-            style="@style/CustomFontTextViewStyle.ClientList"
+            android:fontFamily="@font/google_sans_bold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:maxLines="1"
             android:singleLine="true"
             android:text="Patient Name, Age"
-            android:textColor="@color/text_black"
-            android:textSize="@dimen/register_list_title_size" />
+            android:textColor="@color/text_black" />
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="8dp"
             android:layout_marginBottom="10dp"
             android:orientation="horizontal">
 
-            <org.smartregister.view.customcontrols.CustomFontTextView
+            <TextView
                 android:id="@+id/text_view_village"
-                style="@style/CustomFontTextViewStyle.ClientList.Light"
+                android:fontFamily="@font/google_sans_regular"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Lavingtone #445"
-                android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                android:textColor="@android:color/black"
-                android:textSize="@dimen/register_member_village_size" />
+                android:textAppearance="@style/TextAppearance.AppCompat.Small" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/register_dot_separator_margin"
+                android:layout_marginRight="@dimen/register_dot_separator_margin"
                 android:text="@string/interpunct"
-                android:textColor="@android:color/black" />
+                android:textColor="@color/primary" />
 
-            <org.smartregister.view.customcontrols.CustomFontTextView
+            <TextView
                 android:id="@+id/text_view_gender"
-                style="@style/CustomFontTextViewStyle.ClientList.Light"
+                android:fontFamily="@font/google_sans_regular"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Male"
-                android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                android:textColor="@android:color/black"
-                android:textSize="@dimen/register_member_village_size" />
+                android:textAppearance="@style/TextAppearance.AppCompat.Small" />
         </LinearLayout>
 
     </LinearLayout>
@@ -114,8 +110,8 @@
             android:textAllCaps="false"
             android:textAppearance="?android:textAppearanceSmall"
             android:textColor="@color/vaccine_blue_bg_st"
-            android:textSize="@dimen/malaria_register_list_due_size"
-            android:typeface="normal" />
+            android:fontFamily="@font/google_sans_regular"
+            android:textSize="@dimen/malaria_register_list_due_size" />
 
     </LinearLayout>
 

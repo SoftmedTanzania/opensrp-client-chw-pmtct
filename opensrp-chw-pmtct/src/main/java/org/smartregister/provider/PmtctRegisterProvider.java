@@ -3,12 +3,13 @@ package org.smartregister.provider;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.database.Cursor;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+
+import androidx.recyclerview.widget.RecyclerView;
 
 import org.joda.time.DateTime;
 import org.joda.time.Period;
@@ -59,7 +60,7 @@ public class PmtctRegisterProvider implements RecyclerViewProvider<PmtctRegister
         }
     }
 
-    private String updateMemberGender(CommonPersonObjectClient commonPersonObjectClient) {
+    protected String updateMemberGender(CommonPersonObjectClient commonPersonObjectClient) {
         if ("0".equals(Utils.getValue(commonPersonObjectClient.getColumnmaps(), DBConstants.KEY.IS_ANC_CLOSED, false))) {
             return context.getResources().getString(R.string.anc_string);
         } else if ("0".equals(Utils.getValue(commonPersonObjectClient.getColumnmaps(), DBConstants.KEY.IS_PNC_CLOSED, false))) {
@@ -71,7 +72,7 @@ public class PmtctRegisterProvider implements RecyclerViewProvider<PmtctRegister
     }
 
     @SuppressLint("SetTextI18n")
-    private void populatePatientColumn(CommonPersonObjectClient pc, final RegisterViewHolder viewHolder) {
+    protected void populatePatientColumn(CommonPersonObjectClient pc, final RegisterViewHolder viewHolder) {
         try {
 
             String firstName = getName(

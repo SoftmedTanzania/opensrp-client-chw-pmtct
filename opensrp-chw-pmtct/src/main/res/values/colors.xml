@@ -27,4 +27,14 @@
 
     <color name="grey">#9e9e9e</color>
 
+    <!-- Emergency Transport -->
+    <color name="default_risk_text_black">#000000</color>
+    <color name="default_risk_background_black">#20000000</color>
+    <color name="medium_risk_text_orange">#F28100</color>
+    <color name="medium_risk_background_orange">#20F28100</color>
+    <color name="low_risk_text_green">#16911C</color>
+    <color name="low_risk_background_green">#2016911C</color>
+    <color name="high_risk_text_red">#D0021B</color>
+    <color name="high_risk_background_red">#20D0021B</color>
+
 </resources>

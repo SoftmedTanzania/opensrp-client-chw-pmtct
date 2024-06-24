@@ -45,4 +45,19 @@
     <dimen name="call_widget_font3">18sp</dimen>
     <dimen name="copy_to_clipboard_header_text_size">20sp</dimen>
     <dimen name="copy_to_clipboard_message_text_size">14sp</dimen>
+
+    <dimen name="home_visit_right_margin">20dp</dimen>
+    <dimen name="home_visit_left_margin">10dp</dimen>
+    <dimen name="home_visit_title_text_size">20sp</dimen>
+
+    <dimen name="home_visit_header_margin_top">15dp</dimen>
+    <dimen name="home_visit_header_margin_right">20dp</dimen>
+    <dimen name="home_visit_header_margin_left">20dp</dimen>
+    <dimen name="home_visit_header_margin_bottom">15dp</dimen>
+
+    <dimen name="dialog_toolbar_close_margin">10dp</dimen>
+
+    <dimen name="tool_bar_size">55dp</dimen>
+    <dimen name="tool_bar_title">20sp</dimen>
+    <dimen name="tool_bar_image">25dp</dimen>
 </resources>

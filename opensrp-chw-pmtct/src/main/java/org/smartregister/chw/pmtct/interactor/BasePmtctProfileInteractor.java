@@ -1,6 +1,6 @@
 package org.smartregister.chw.pmtct.interactor;
 
-import android.support.annotation.VisibleForTesting;
+import androidx.annotation.VisibleForTesting;
 
 import org.smartregister.chw.pmtct.contract.PmtctProfileContract;
 import org.smartregister.chw.pmtct.domain.MemberObject;

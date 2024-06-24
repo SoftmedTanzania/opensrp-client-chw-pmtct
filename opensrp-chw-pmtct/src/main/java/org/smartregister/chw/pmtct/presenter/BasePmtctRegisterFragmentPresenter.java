@@ -3,7 +3,6 @@ package org.smartregister.chw.pmtct.presenter;
 import org.apache.commons.lang3.StringUtils;
 import org.smartregister.chw.pmtct.contract.PmtctRegisterFragmentContract;
 import org.smartregister.chw.pmtct.util.Constants;
-import org.smartregister.chw.pmtct.util.DBConstants;
 import org.smartregister.configurableviews.model.RegisterConfiguration;
 import org.smartregister.configurableviews.model.View;
 import org.smartregister.configurableviews.model.ViewConfiguration;
@@ -61,7 +60,7 @@ public class BasePmtctRegisterFragmentPresenter implements PmtctRegisterFragment
 
     @Override
     public void initializeQueries(String mainCondition) {
-        String tableName = Constants.TABLES.PMTCT_REGISTRATION;
+        String tableName = getMainTable();
         mainCondition = trim(getMainCondition()).equals("") ? mainCondition : getMainCondition();
         String countSelect = model.countSelect(tableName, mainCondition);
         String mainSelect = model.mainSelect(tableName, mainCondition);

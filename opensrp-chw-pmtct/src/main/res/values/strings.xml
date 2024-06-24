@@ -15,13 +15,14 @@
     <string name="record_malaria">Record Pmtct follow-up</string>
     <string name="return_to_previous_page">Return all Pmtct Clients</string>
     <string name="last_visit_40_days_ago">Last visit %1$s ago</string>
-    <string name="view_medical_history">View medical history</string>
+    <string name="medical_history">Medical History</string>
+    <string name="view_medical_history">View Medical History</string>
     <string name="call_no_number_provided">(no number provided)</string>
     <string name="view_upcoming_services">View upcoming services</string>
     <string name="family_has_nothing_due">Family has nothing due</string>
     <string name="go_to_family_s_profile">Go to family\'s profile</string>
     <string name="family_has_services_due">Family has services due</string>
-    <string name="primary_care_giver">PRIMARY CARE GIVER</string>
+    <string name="primary_care_giver">PRIMARY CAREGIVER</string>
     <string name="family_head">FAMILY HEAD</string>
     <string name="family_has_service_overdue"><![CDATA[Family has <font color=#FF0000>services overdue</font></b>]]></string>
     <string name="vaccine_service_upcoming"><![CDATA[%1$s <font color=#7f7f7f>upcoming (%2$s)</font></b>]]></string>
@@ -53,7 +54,23 @@
     <string name="pmtct">PMTCT</string>
     <string name="register_pmtct">Register Pmtct</string>
     <string name="record_pmtct">Record PMTCT Followup</string>
-    <string name="return_to_pmtct_clients">Return to all Pmtct Clients</string>
+    <string name="return_to_pmtct_clients">Return to Pmtct Clients List</string>
     <string name="next_visit_date">Next Due in %s</string>
+    <string name="error_unable_save_home_visit">unable to save home visit</string>
+    <string name="optional">optional</string>
+    <string name="pmtct_visit">pmtct visit</string>
+    <string name="hvl_results">HVL Results</string>
+    <string name="view_hvl_results">View Client\'s HVL Results</string>
+    <string name="baseline_investigation_results">Baseline Investigation Results</string>
+    <string name="view_cd4_results">View CD4 Results</string>
+    <string name="sample_id_title">SAMPLE ID:</string>
+    <string name="collection_date">Collection Date</string>
+    <string name="record_hvl">Record HVL</string>
+    <string name="hvl">HVL</string>
+    <string name="record_eac">Record EAC Visit</string>
+    <string name="low_risk">Low Risk</string>
+    <string name="medium_risk">Medium Risk</string>
+    <string name="high_risk">High Risk</string>
+    <string name="process_visit">Process Visit</string>
 
 </resources>

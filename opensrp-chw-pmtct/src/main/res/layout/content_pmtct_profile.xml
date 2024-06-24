@@ -11,18 +11,48 @@
         android:background="@color/white">
 
         <RelativeLayout
+            android:id="@+id/rlProcessVisitBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/list_item_background_selctor"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:visibility="gone">
+
+            <org.smartregister.view.customcontrols.CustomFontTextView
+                android:id="@+id/textview_process_visit"
+                style="@style/CustomFontTextViewStyle.ListView.Normal.MultipleLines"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:layout_marginRight="4dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/button_selector"
+                android:gravity="center_horizontal"
+                android:paddingLeft="30dp"
+                android:paddingTop="10dp"
+                android:paddingRight="30dp"
+                android:paddingBottom="10dp"
+                android:visibility="visible"
+                android:text="@string/process_visit"
+                android:textColor="@color/white" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
             android:id="@+id/notification_and_referral_row"
+            android:layout_below="@id/rlProcessVisitBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:visibility="gone">
 
-            <android.support.v7.widget.RecyclerView
+            <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/notification_and_referral_recycler_view"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-            </android.support.v7.widget.RecyclerView>
+            </androidx.recyclerview.widget.RecyclerView>
         </RelativeLayout>
 
         <RelativeLayout
@@ -31,7 +61,10 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/view_notification_and_referral_row"
             android:background="@drawable/list_item_background_selctor"
-            android:padding="20dp"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+            android:paddingRight="20dp"
+            android:paddingLeft="16dp"
             android:visibility="gone">
 
             <ImageView
@@ -39,7 +72,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:layout_marginRight="10dp"
                 android:src="@drawable/childrow_history" />
 
             <ImageView
@@ -51,16 +83,27 @@
                 android:src="@drawable/row_goto" />
 
             <org.smartregister.view.customcontrols.CustomFontTextView
+                android:id="@+id/vViewHistory"
+                style="@style/CustomFontTextViewStyle.ListView.Normal.MultipleLines"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/tick_image"
+                android:gravity="center_horizontal"
+                android:text="@string/medical_history"
+                android:textColor="@android:color/black" />
+
+            <org.smartregister.view.customcontrols.CustomFontTextView
                 android:id="@+id/ivViewHistoryArrow"
                 style="@style/CustomFontTextViewStyle.ListView.Normal.MultipleLines"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
+                android:layout_below="@+id/vViewHistory"
                 android:layout_marginLeft="10dp"
                 android:layout_toRightOf="@+id/tick_image"
                 android:text="@string/view_medical_history"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                android:textColor="@color/light_grey_text" />
+                android:textColor="@android:color/darker_gray" />
+
         </RelativeLayout>
 
         <RelativeLayout
@@ -151,8 +194,8 @@
             android:layout_below="@+id/view_most_due_overdue_row"
             android:background="@drawable/list_item_background_selctor"
             android:padding="20dp"
-            tools:visibility="visible"
-            android:visibility="gone">
+            android:visibility="gone"
+            tools:visibility="visible">
 
             <ImageView
                 android:id="@+id/family_image"
@@ -194,6 +237,106 @@
 
         </RelativeLayout>
 
+        <RelativeLayout
+            android:id="@+id/rlHvlResults"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/view_family_row"
+            android:background="@drawable/list_item_background_selctor"
+            android:padding="20dp"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+            <ImageView
+                android:id="@+id/hvl_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/ic_hvl" />
+
+            <ImageView
+                android:id="@+id/iv_family_services_arrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/row_goto" />
+
+            <org.smartregister.view.customcontrols.CustomFontTextView
+                android:id="@+id/textview_hvl_results"
+                style="@style/CustomFontTextViewStyle.ListView.Normal.MultipleLines"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/hvl_image"
+                android:gravity="center_horizontal"
+                android:text="@string/hvl_results"
+                android:textColor="@android:color/black" />
+
+            <org.smartregister.view.customcontrols.CustomFontTextView
+                android:id="@+id/tv_view_hvl_results"
+                style="@style/CustomFontTextViewStyle.ListView.Normal.MultipleLines"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textview_hvl_results"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/hvl_image"
+                android:text="@string/view_hvl_results"
+                android:textColor="@android:color/darker_gray" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rlBaselineInvestigationResults"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/view_hvl_results_row"
+            android:background="@drawable/list_item_background_selctor"
+            android:padding="20dp"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+            <ImageView
+                android:id="@+id/baseline_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/ic_testing" />
+
+            <ImageView
+                android:id="@+id/iv_family_services_arrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/row_goto" />
+
+            <org.smartregister.view.customcontrols.CustomFontTextView
+                android:id="@+id/textview_baseline_results"
+                style="@style/CustomFontTextViewStyle.ListView.Normal.MultipleLines"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/baseline_image"
+                android:gravity="center_horizontal"
+                android:text="@string/baseline_investigation_results"
+                android:textColor="@android:color/black" />
+
+            <org.smartregister.view.customcontrols.CustomFontTextView
+                android:id="@+id/tv_view_baseline_results"
+                style="@style/CustomFontTextViewStyle.ListView.Normal.MultipleLines"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textview_baseline_results"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/baseline_image"
+                android:text="@string/view_cd4_results"
+                android:textColor="@android:color/darker_gray" />
+
+        </RelativeLayout>
+
         <View
             android:id="@+id/view_notification_and_referral_row"
             android:layout_width="match_parent"
@@ -201,6 +344,7 @@
             android:layout_below="@+id/notification_and_referral_row"
             android:background="@color/light_grey"
             android:visibility="gone" />
+
         <View
             android:id="@+id/view_last_visit_row"
             android:layout_width="match_parent"
@@ -208,6 +352,7 @@
             android:layout_below="@+id/rlLastVisit"
             android:background="@color/light_grey"
             android:visibility="gone" />
+
         <View
             android:id="@+id/view_next_visit_row"
             android:layout_width="match_parent"
@@ -215,6 +360,7 @@
             android:layout_below="@+id/rlNextVisit"
             android:background="@color/light_grey"
             android:visibility="gone" />
+
         <View
             android:id="@+id/view_positive_date_row"
             android:layout_width="match_parent"
@@ -236,6 +382,22 @@
             android:layout_width="match_parent"
             android:layout_height="1px"
             android:layout_below="@+id/rlFamilyServicesDue"
+            android:background="@color/light_grey"
+            android:visibility="gone" />
+
+        <View
+            android:id="@+id/view_hvl_results_row"
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_below="@+id/rlHvlResults"
+            android:background="@color/light_grey"
+            android:visibility="gone" />
+
+        <View
+            android:id="@+id/view_baseline_results_row"
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_below="@+id/rlBaselineInvestigationResults"
             android:background="@color/light_grey"
             android:visibility="gone" />
 

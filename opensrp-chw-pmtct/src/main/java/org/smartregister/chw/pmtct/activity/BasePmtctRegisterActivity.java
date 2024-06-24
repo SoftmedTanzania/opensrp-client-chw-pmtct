@@ -3,10 +3,8 @@ package org.smartregister.chw.pmtct.activity;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.MenuRes;
-import android.support.design.bottomnavigation.LabelVisibilityMode;
-import android.support.v4.app.Fragment;
 
+import com.google.android.material.bottomnavigation.LabelVisibilityMode;
 import com.vijay.jsonwizard.constants.JsonFormConstants;
 import com.vijay.jsonwizard.domain.Form;
 
@@ -33,11 +31,12 @@ import org.smartregister.util.Utils;
 import org.smartregister.view.activity.BaseRegisterActivity;
 import org.smartregister.view.fragment.BaseRegisterFragment;
 
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 
+import androidx.annotation.MenuRes;
+import androidx.fragment.app.Fragment;
 import timber.log.Timber;
 
 public class BasePmtctRegisterActivity extends BaseRegisterActivity implements PmtctRegisterContract.View {

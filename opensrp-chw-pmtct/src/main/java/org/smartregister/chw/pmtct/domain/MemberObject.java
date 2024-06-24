@@ -1,7 +1,12 @@
 package org.smartregister.chw.pmtct.domain;
 
+import org.joda.time.DateTime;
+import org.joda.time.Period;
+import org.smartregister.util.Utils;
+
 import java.io.Serializable;
-import java.util.Date;
+
+import timber.log.Timber;
 
 public class MemberObject implements Serializable {
 
@@ -14,18 +19,9 @@ public class MemberObject implements Serializable {
     private String gender;
     private String uniqueId;
     private String age;
+    private String dod;
     private String relationalid;
     private String details;
-   // private String dateChwMalariaTest;
-    private String feverMalariaChw;
-    private String feverDuration;
-    private String dateHfMalariaTest;
-//    private Date malariaTestDate;
-//    private String malariaTreat;
-    private String famLlin;
-    private String llin2Days;
-    private String llinCondition;
-   // private String malariaEduChw;
     private String baseEntityId;
     private String relationalId;
     private String primaryCareGiver;
@@ -39,10 +35,10 @@ public class MemberObject implements Serializable {
     private String deliveryDate;
     private String ancMember;
     private String pncMember;
-    //private String malariaFollowUpDate;
 
     public MemberObject() {
     }
+
     public String getFirstName() {
         return firstName;
     }
@@ -67,7 +63,20 @@ public class MemberObject implements Serializable {
         this.lastName = lastName;
     }
 
-    public String getAge() {
+    public String getFullName() {
+        return Utils.getName(getFirstName(), getLastName());
+    }
+
+    public int getAge() {
+        try {
+            return new Period(new DateTime((age)), new DateTime()).getYears();
+        } catch (Exception e) {
+            Timber.e(e);
+        }
+        return 0;
+    }
+
+    public String getDob(){
         return age;
     }
 
@@ -115,87 +124,6 @@ public class MemberObject implements Serializable {
         this.details = details;
     }
 
-//    public String getDateChwMalariaTest() {
-//        return dateChwMalariaTest;
-//    }
-//
-//    public void setDateChwMalariaTest(String dateChwMalariaTest) {
-//        this.dateChwMalariaTest = dateChwMalariaTest;
-//    }
-
-    public String getFeverMalariaChw() {
-        return feverMalariaChw;
-    }
-
-    public void setFeverMalariaChw(String feverMalariaChw) {
-        this.feverMalariaChw = feverMalariaChw;
-    }
-
-    public String getFeverDuration() {
-        return feverDuration;
-    }
-
-    public void setFeverDuration(String feverDuration) {
-        this.feverDuration = feverDuration;
-    }
-
-    public String getDateHfMalariaTest() {
-        return dateHfMalariaTest;
-    }
-
-    public void setDateHfMalariaTest(String dateHfMalariaTest) {
-        this.dateHfMalariaTest = dateHfMalariaTest;
-    }
-
-    /*
-    public Date getMalariaTestDate() {
-        return malariaTestDate;
-    }
-
-    public void setMalariaTestDate(Date malariaTestDate) {
-        this.malariaTestDate = malariaTestDate;
-    }
-
-    public String getMalariaTreat() {
-        return malariaTreat;
-    }
-
-    public void setMalariaTreat(String malariaTreat) {
-        this.malariaTreat = malariaTreat;
-    }*/
-
-    public String getFamLlin() {
-        return famLlin;
-    }
-
-    public void setFamLlin(String famLlin) {
-        this.famLlin = famLlin;
-    }
-
-    public String getLlin2Days() {
-        return llin2Days;
-    }
-
-    public void setLlin2Days(String llin2Days) {
-        this.llin2Days = llin2Days;
-    }
-
-    public String getLlinCondition() {
-        return llinCondition;
-    }
-
-    public void setLlinCondition(String llinCondition) {
-        this.llinCondition = llinCondition;
-    }
-    /*
-    public String getMalariaEduChw() {
-        return malariaEduChw;
-    }
-
-    public void setMalariaEduChw(String malariaEduChw) {
-        this.malariaEduChw = malariaEduChw;
-    }
-    */
     public String getBaseEntityId() {
         return baseEntityId;
     }
@@ -316,12 +244,12 @@ public class MemberObject implements Serializable {
     public void setPncMember(String pncMember) {
         this.pncMember = pncMember;
     }
-    /*
-    public String getMalariaFollowUpDate() {
-        return malariaFollowUpDate;
+
+    public String getDod() {
+        return dod;
     }
 
-    public void setMalariaFollowUpDate(String malariaFollowUpDate) {
-        this.malariaFollowUpDate = malariaFollowUpDate;
-    }*/
+    public void setDod(String dod) {
+        this.dod = dod;
+    }
 }

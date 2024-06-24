@@ -9,7 +9,6 @@ import org.smartregister.pmtct.R;
 
 import java.lang.ref.WeakReference;
 import java.util.List;
-import java.util.Objects;
 
 public class BasePmtctRegisterPresenter implements PmtctRegisterContract.Presenter, PmtctRegisterContract.InteractorCallBack {
 
@@ -71,7 +70,7 @@ public class BasePmtctRegisterPresenter implements PmtctRegisterContract.Present
 //        implement
     }
 
-    private PmtctRegisterContract.View getView() {
+    protected PmtctRegisterContract.View getView() {
         if (viewReference != null)
             return viewReference.get();
         else
